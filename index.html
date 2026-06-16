@@ -1647,7 +1647,7 @@ Lead: Nome: ${nome}, Interesse: ${interesse}, Status atual: ${status}, Origem: $
         <div class="painel-page-header">
           <div><h2>Geração de Contrato por IA</h2><p>Preencha os dados e a IA gera o contrato completo</p></div>
         </div>
-        <div class="sim-main-grid">
+        <div style="display:grid;grid-template-columns:1fr;gap:20px">
           <div class="form-card">
             <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gold);margin-bottom:16px">Dados do Contrato</div>
             <div class="form-grid">
@@ -1692,7 +1692,7 @@ Lead: Nome: ${nome}, Interesse: ${interesse}, Status atual: ${status}, Origem: $
             <button class="btn-primary" style="margin-top:16px;width:100%" onclick="gerarContrato()">✦ Gerar Contrato com IA</button>
           </div>
 
-          <div id="contrato-resultado" style="background:var(--gray);border-radius:12px;padding:24px;overflow-y:auto;max-height:600px">
+          <div id="contrato-resultado" style="background:var(--gray);border-radius:12px;padding:24px;">
             <div style="text-align:center;color:var(--gray-mid);padding:40px 0">
               <div style="font-size:2.5rem;margin-bottom:12px">📄</div>
               <p style="font-size:0.9rem">Preencha os dados e clique em "Gerar Contrato"</p>
@@ -1734,7 +1734,7 @@ O contrato deve ter: cabeçalho, cláusulas numeradas (mínimo 8 cláusulas), es
     try {
       const resp = await fetch('/.netlify/functions/claude', {
         method:'POST', headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({ model:'claude-sonnet-4-6', max_tokens:1000,
+        body: JSON.stringify({ model:'claude-sonnet-4-6', max_tokens:4000,
           system:'Você é um advogado especialista em direito imobiliário brasileiro. Gere contratos completos e juridicamente adequados.',
           messages:[{role:'user',content:prompt}]})
       });
@@ -1936,34 +1936,26 @@ Máximo 4 linhas. Sem enrolação.`
           <div style="display:flex;gap:8px;flex-wrap:wrap">
             <select id="filtro-tipo-neg" onchange="filtrarProprietarios()" style="padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:0.85rem">
               <option value="">Todos</option>
-              <option value="Venda">Venda</option>
-              <option value="Aluguel">Aluguel</option>
+              <option value="Venda">🏠 Venda</option>
+              <option value="Aluguel">🔑 Aluguel</option>
             </select>
             <select id="filtro-status-prop" onchange="filtrarProprietarios()" style="padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:0.85rem">
               <option value="">Todos status</option>
-              <option value="Novo">Novo</option>
-              <option value="Contatado">Contatado</option>
-              <option value="Captado">Captado</option>
+              <option value="Novo">🟢 Novo</option>
+              <option value="Contatado">🟡 Contatado</option>
+              <option value="Captado">🔵 Captado</option>
             </select>
           </div>
         </div>
-
-        <!-- MAPA -->
-        <div style="border-radius:14px;overflow:hidden;margin-bottom:24px;box-shadow:var(--shadow)">
-          <div id="mapa-proprietarios" style="height:360px;width:100%;background:#e8f0fe"></div>
-        </div>
-
-        <!-- LISTA -->
         <div id="lista-proprietarios" style="display:grid;gap:12px">
           <div style="text-align:center;padding:40px;color:var(--gray-mid)">
             <div style="font-size:2rem;margin-bottom:8px">⏳</div>
-            <p>Carregando proprietários...</p>
+            <p>Carregando...</p>
           </div>
         </div>
       </div>`;
 
     await carregarProprietarios();
-    iniciarMapa();
     window.filtrarProprietarios = filtrarProprietarios;
     window.atualizarStatusProp = atualizarStatusProp;
   }
@@ -1989,32 +1981,41 @@ Máximo 4 linhas. Sem enrolação.`
     el.innerHTML = lista.map(p => {
       const corStatus = p.status === 'Novo' ? '#1e7e34' : p.status === 'Contatado' ? '#b7800a' : '#1a56db';
       const bgStatus  = p.status === 'Novo' ? '#e6f4ea' : p.status === 'Contatado' ? '#fef7e0' : '#e8f0fe';
-      const temMapa   = p.lat && p.lng ? '📍' : '❓';
+      const iconeNeg  = p.tipo_negocio === 'Venda' ? '🏠' : '🔑';
+      const waMsg     = encodeURIComponent(`Olá ${p.nome}! Sou corretor da ImóvelAI. Vi que você tem interesse em ${p.tipo_negocio.toLowerCase()} seu imóvel em ${p.cidade}. Posso te ajudar?`);
       return `
-        <div class="form-card" style="padding:18px">
-          <div style="display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap">
-            <div style="width:44px;height:44px;background:var(--navy);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;flex-shrink:0">${p.nome[0].toUpperCase()}</div>
-            <div style="flex:1;min-width:200px">
-              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px">
-                <span style="font-weight:700;color:var(--navy)">${p.nome}</span>
-                <span style="background:${bgStatus};color:${corStatus};padding:2px 10px;border-radius:20px;font-size:0.72rem;font-weight:700">${p.status}</span>
-                <span style="background:var(--gray);color:var(--text-light);padding:2px 10px;border-radius:20px;font-size:0.72rem">${p.tipo_negocio} • ${p.tipo_imovel}</span>
-              </div>
-              <div style="font-size:0.82rem;color:var(--gray-mid)">${temMapa} ${p.bairro ? p.bairro+', ' : ''}${p.cidade}${p.valor_pretendido ? ' • R$ '+p.valor_pretendido : ''}</div>
-              ${p.observacoes ? `<div style="font-size:0.8rem;color:var(--text-light);margin-top:4px;font-style:italic">"${p.observacoes}"</div>` : ''}
-              <div style="font-size:0.75rem;color:var(--gray-mid);margin-top:4px">${new Date(p.created_at).toLocaleDateString('pt-BR')} às ${new Date(p.created_at).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}</div>
+        <div style="background:white;border-radius:14px;padding:18px;box-shadow:0 2px 12px rgba(27,58,92,0.08);border:1px solid rgba(27,58,92,0.06)">
+          <!-- TOPO: avatar + info + status -->
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+            <div style="width:46px;height:46px;background:var(--navy);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.2rem;flex-shrink:0">${p.nome[0].toUpperCase()}</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-weight:700;color:var(--navy);font-size:0.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${p.nome}</div>
+              <div style="font-size:0.78rem;color:var(--gray-mid);margin-top:2px">${new Date(p.created_at).toLocaleDateString('pt-BR')} às ${new Date(p.created_at).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}</div>
             </div>
-            <div style="display:flex;flex-direction:column;gap:6px;flex-shrink:0">
-              <a href="https://wa.me/55${p.telefone.replace(/\D/g,'')}&text=${encodeURIComponent('Olá '+p.nome+'! Sou da ImóvelAI. Vi que você tem interesse em '+p.tipo_negocio.toLowerCase()+' seu imóvel em '+p.cidade+'. Posso te ajudar!')}" target="_blank"
-                style="background:#25d366;color:white;border:none;padding:8px 14px;border-radius:8px;font-size:0.78rem;font-weight:700;cursor:pointer;text-decoration:none;text-align:center">
-                📱 WhatsApp
-              </a>
-              <select onchange="atualizarStatusProp('${p.id}', this.value)" style="padding:6px 8px;border:1px solid #ddd;border-radius:8px;font-size:0.75rem;cursor:pointer">
-                <option ${p.status==='Novo'?'selected':''}>Novo</option>
-                <option ${p.status==='Contatado'?'selected':''}>Contatado</option>
-                <option ${p.status==='Captado'?'selected':''}>Captado</option>
-              </select>
-            </div>
+            <span style="background:${bgStatus};color:${corStatus};padding:4px 10px;border-radius:20px;font-size:0.72rem;font-weight:700;flex-shrink:0">${p.status}</span>
+          </div>
+
+          <!-- CHIPS de info -->
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px">
+            <span style="background:#eef2ff;color:#3730a3;padding:4px 10px;border-radius:20px;font-size:0.78rem;font-weight:600">${iconeNeg} ${p.tipo_negocio}</span>
+            <span style="background:var(--gray);color:var(--text-light);padding:4px 10px;border-radius:20px;font-size:0.78rem">🏗️ ${p.tipo_imovel}</span>
+            <span style="background:var(--gray);color:var(--text-light);padding:4px 10px;border-radius:20px;font-size:0.78rem">📍 ${p.bairro ? p.bairro+', ' : ''}${p.cidade}</span>
+            ${p.valor_pretendido ? `<span style="background:#fef7e0;color:#7a5c00;padding:4px 10px;border-radius:20px;font-size:0.78rem;font-weight:600">💰 R$ ${p.valor_pretendido}</span>` : ''}
+          </div>
+
+          ${p.observacoes ? `<div style="background:var(--gray);border-radius:8px;padding:10px 12px;font-size:0.82rem;color:var(--text-light);margin-bottom:12px;font-style:italic">"${p.observacoes}"</div>` : ''}
+
+          <!-- AÇÕES -->
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+            <a href="https://wa.me/55${p.telefone.replace(/\D/g,'')}&text=${waMsg}" target="_blank"
+              style="flex:1;min-width:120px;background:#25d366;color:white;border:none;padding:10px 16px;border-radius:8px;font-size:0.85rem;font-weight:700;cursor:pointer;text-decoration:none;text-align:center;display:block">
+              📱 WhatsApp — ${p.telefone}
+            </a>
+            <select onchange="atualizarStatusProp('${p.id}', this.value)" style="padding:10px 8px;border:1.5px solid #e0e0e0;border-radius:8px;font-size:0.82rem;cursor:pointer;color:var(--text)">
+              <option ${p.status==='Novo'?'selected':''} value="Novo">🟢 Novo</option>
+              <option ${p.status==='Contatado'?'selected':''} value="Contatado">🟡 Contatado</option>
+              <option ${p.status==='Captado'?'selected':''} value="Captado">🔵 Captado</option>
+            </select>
           </div>
         </div>`;
     }).join('');
@@ -2490,8 +2491,9 @@ Máximo 4 linhas. Sem enrolação.`
     </div>
 
     <!-- MAIN CONTENT -->
-    <div class="painel-main">
-      <div id="painel-content"></div>
+    <div class="painel-main" style="position:relative">
+      <button onclick="fecharPainel()" title="Fechar" style="position:sticky;top:12px;float:right;margin:12px 12px 0 0;background:var(--navy);border:none;color:white;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;z-index:10;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.2)">✕</button>
+      <div id="painel-content" style="clear:both"></div>
     </div>
 
   </div>
