@@ -366,7 +366,122 @@
     .hero h1 { font-size: 1.7rem; }
     .dashboard-grid { grid-template-columns: 1fr; }
   }
-</style>
+
+  /* ============ RESPONSIVO MOBILE ============ */
+  @media (max-width: 768px) {
+
+    /* NAV */
+    .nav-links { display: none; }
+    .nav-cta { font-size: 0.8rem; padding: 8px 14px; }
+    .nav-brand { font-size: 1.1rem; }
+    nav { padding: 0 16px; }
+
+    /* PAINEL CORRETOR */
+    #btn-painel-corretor {
+      position: fixed !important;
+      bottom: 16px !important;
+      right: 16px !important;
+      top: auto !important;
+      font-size: 0.78rem !important;
+      padding: 10px 14px !important;
+      z-index: 300;
+    }
+
+    /* HERO */
+    .hero { padding: 80px 20px 60px; min-height: auto; }
+    .hero h1 { font-size: 2.2rem; line-height: 1.2; }
+    .hero p { font-size: 0.95rem; }
+    .hero-search { flex-direction: column; gap: 8px; padding: 12px; }
+    .hero-search input { font-size: 0.9rem; padding: 12px; }
+    .hero-search button { width: 100%; padding: 14px; font-size: 0.9rem; }
+    .hero-chips { flex-wrap: wrap; gap: 6px; justify-content: center; }
+    .hero-chip { font-size: 0.75rem; padding: 6px 12px; }
+
+    /* STATS */
+    .stats-bar { flex-direction: column; gap: 16px; padding: 24px 20px; }
+    .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 16px; }
+    .stat-item:last-child { border-bottom: none; }
+    .stat-num { font-size: 2rem; }
+
+    /* SEÇÃO IMÓVEIS */
+    .section { padding: 40px 16px; }
+    .section-title { font-size: 1.8rem; }
+    .section-label { font-size: 0.75rem; }
+    .filter-bar { flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .filter-btn { font-size: 0.8rem; padding: 8px 14px; }
+
+    /* GRID DE IMÓVEIS */
+    .imoveis-grid { grid-template-columns: 1fr; gap: 20px; }
+    .card-imovel { max-width: 100%; }
+    .card-img { height: 200px; }
+    .card-price { font-size: 1.2rem; }
+    .card-features { gap: 10px; flex-wrap: wrap; }
+
+    /* COMO FUNCIONA */
+    .steps-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .step-num { font-size: 1.8rem; }
+    .step-title { font-size: 0.9rem; }
+    .step-desc { font-size: 0.82rem; }
+
+    /* CHAT */
+    #chat-widget {
+      width: calc(100vw - 32px) !important;
+      right: 16px !important;
+      left: 16px !important;
+      bottom: 80px !important;
+      max-height: 70vh;
+    }
+    #chat-toggle {
+      bottom: 16px !important;
+      right: 16px !important;
+    }
+
+    /* PAINEL OVERLAY */
+    #painel-overlay { padding: 0; }
+    .painel-container { flex-direction: column; height: 100vh; border-radius: 0; }
+    .painel-sidebar { width: 100%; height: auto; flex-direction: row; overflow-x: auto; padding: 12px; gap: 8px; }
+    .painel-sidebar-header { display: none; }
+    .painel-nav-item { flex-direction: row; gap: 8px; padding: 8px 12px; min-width: auto; white-space: nowrap; border-left: none; border-bottom: 3px solid transparent; }
+    .painel-nav-item.active { border-left: none; border-bottom: 3px solid var(--gold); }
+    .painel-nav-item span:first-child { font-size: 1rem; }
+    .painel-nav-item span:last-child { font-size: 0.78rem; }
+    .painel-sidebar-footer { display: none; }
+    .painel-content { flex: 1; overflow-y: auto; padding: 16px; }
+    .painel-header { flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 16px; }
+    .painel-header h2 { font-size: 1.3rem; }
+
+    /* DASHBOARD CARDS */
+    .dashboard-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .dash-card { padding: 16px; }
+    .dash-num { font-size: 1.8rem; }
+
+    /* TABELAS NO PAINEL */
+    .leads-table, .imoveis-table { font-size: 0.78rem; }
+    .leads-table th, .leads-table td,
+    .imoveis-table th, .imoveis-table td { padding: 8px 6px; }
+
+    /* SIMULADOR */
+    .simulador-grid { grid-template-columns: 1fr; }
+
+    /* MODAL TOUR */
+    #tour-overlay > div { width: 96%; border-radius: 12px; }
+
+    /* LOGIN MODAL */
+    #login-overlay > div { width: 92%; padding: 28px 20px; }
+
+    /* FOOTER */
+    footer { padding: 20px 16px; font-size: 0.8rem; text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 1.8rem; }
+    .dashboard-grid { grid-template-columns: 1fr; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .card-features { gap: 8px; }
+    .card-feat { font-size: 0.75rem; }
+  }
+
+  </style>
 </head>
 <body>
 
@@ -1831,7 +1946,122 @@ Máximo 4 linhas. Sem enrolação.`
     .dash-bottom { grid-template-columns: 1fr; }
     .form-grid { grid-template-columns: 1fr; }
   }
-</style>
+
+  /* ============ RESPONSIVO MOBILE ============ */
+  @media (max-width: 768px) {
+
+    /* NAV */
+    .nav-links { display: none; }
+    .nav-cta { font-size: 0.8rem; padding: 8px 14px; }
+    .nav-brand { font-size: 1.1rem; }
+    nav { padding: 0 16px; }
+
+    /* PAINEL CORRETOR */
+    #btn-painel-corretor {
+      position: fixed !important;
+      bottom: 16px !important;
+      right: 16px !important;
+      top: auto !important;
+      font-size: 0.78rem !important;
+      padding: 10px 14px !important;
+      z-index: 300;
+    }
+
+    /* HERO */
+    .hero { padding: 80px 20px 60px; min-height: auto; }
+    .hero h1 { font-size: 2.2rem; line-height: 1.2; }
+    .hero p { font-size: 0.95rem; }
+    .hero-search { flex-direction: column; gap: 8px; padding: 12px; }
+    .hero-search input { font-size: 0.9rem; padding: 12px; }
+    .hero-search button { width: 100%; padding: 14px; font-size: 0.9rem; }
+    .hero-chips { flex-wrap: wrap; gap: 6px; justify-content: center; }
+    .hero-chip { font-size: 0.75rem; padding: 6px 12px; }
+
+    /* STATS */
+    .stats-bar { flex-direction: column; gap: 16px; padding: 24px 20px; }
+    .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 16px; }
+    .stat-item:last-child { border-bottom: none; }
+    .stat-num { font-size: 2rem; }
+
+    /* SEÇÃO IMÓVEIS */
+    .section { padding: 40px 16px; }
+    .section-title { font-size: 1.8rem; }
+    .section-label { font-size: 0.75rem; }
+    .filter-bar { flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .filter-btn { font-size: 0.8rem; padding: 8px 14px; }
+
+    /* GRID DE IMÓVEIS */
+    .imoveis-grid { grid-template-columns: 1fr; gap: 20px; }
+    .card-imovel { max-width: 100%; }
+    .card-img { height: 200px; }
+    .card-price { font-size: 1.2rem; }
+    .card-features { gap: 10px; flex-wrap: wrap; }
+
+    /* COMO FUNCIONA */
+    .steps-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .step-num { font-size: 1.8rem; }
+    .step-title { font-size: 0.9rem; }
+    .step-desc { font-size: 0.82rem; }
+
+    /* CHAT */
+    #chat-widget {
+      width: calc(100vw - 32px) !important;
+      right: 16px !important;
+      left: 16px !important;
+      bottom: 80px !important;
+      max-height: 70vh;
+    }
+    #chat-toggle {
+      bottom: 16px !important;
+      right: 16px !important;
+    }
+
+    /* PAINEL OVERLAY */
+    #painel-overlay { padding: 0; }
+    .painel-container { flex-direction: column; height: 100vh; border-radius: 0; }
+    .painel-sidebar { width: 100%; height: auto; flex-direction: row; overflow-x: auto; padding: 12px; gap: 8px; }
+    .painel-sidebar-header { display: none; }
+    .painel-nav-item { flex-direction: row; gap: 8px; padding: 8px 12px; min-width: auto; white-space: nowrap; border-left: none; border-bottom: 3px solid transparent; }
+    .painel-nav-item.active { border-left: none; border-bottom: 3px solid var(--gold); }
+    .painel-nav-item span:first-child { font-size: 1rem; }
+    .painel-nav-item span:last-child { font-size: 0.78rem; }
+    .painel-sidebar-footer { display: none; }
+    .painel-content { flex: 1; overflow-y: auto; padding: 16px; }
+    .painel-header { flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 16px; }
+    .painel-header h2 { font-size: 1.3rem; }
+
+    /* DASHBOARD CARDS */
+    .dashboard-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .dash-card { padding: 16px; }
+    .dash-num { font-size: 1.8rem; }
+
+    /* TABELAS NO PAINEL */
+    .leads-table, .imoveis-table { font-size: 0.78rem; }
+    .leads-table th, .leads-table td,
+    .imoveis-table th, .imoveis-table td { padding: 8px 6px; }
+
+    /* SIMULADOR */
+    .simulador-grid { grid-template-columns: 1fr; }
+
+    /* MODAL TOUR */
+    #tour-overlay > div { width: 96%; border-radius: 12px; }
+
+    /* LOGIN MODAL */
+    #login-overlay > div { width: 92%; padding: 28px 20px; }
+
+    /* FOOTER */
+    footer { padding: 20px 16px; font-size: 0.8rem; text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 1.8rem; }
+    .dashboard-grid { grid-template-columns: 1fr; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .card-features { gap: 8px; }
+    .card-feat { font-size: 0.75rem; }
+  }
+
+  </style>
 
 <!-- BOTÃO PAINEL -->
 <button id="btn-painel" onclick="abrirPainel()">⚡ Painel do Corretor</button>
