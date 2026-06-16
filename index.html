@@ -326,6 +326,7 @@
     /* NAV */
     nav { padding: 0 16px; height: 56px; }
     .nav-links { display: none; }
+    #btn-painel-nav { font-size: 0.72rem !important; padding: 7px 10px !important; }
     .logo-text { font-size: 1.1rem; }
     .painel-float-btn { top: 60px; right: 12px; font-size: 0.75rem; padding: 8px 12px; }
 
@@ -512,8 +513,7 @@
 <!-- NAV -->
 <nav>
   <div class="logo">
-    <div class="logo-icon">🏡</div>
-    <div class="logo-text">Imóvel<span>AI</span></div>
+    <img src="/assets/logo-nav.png" alt="ImóvelAI" style="height:38px;width:auto;object-fit:contain">
   </div>
   <div class="nav-links">
     <a href="#">Comprar</a>
@@ -522,6 +522,7 @@
     <a href="#">Sobre</a>
     <a href="#" class="nav-cta">Fale com corretor</a>
   </div>
+  <button id="btn-painel-nav" onclick="abrirPainel()" style="background:var(--gold);color:var(--navy);border:none;padding:9px 18px;border-radius:8px;font-size:0.82rem;font-weight:700;cursor:pointer;box-shadow:0 2px 12px rgba(201,168,76,0.4);white-space:nowrap">⚡ Painel do Corretor</button>
 </nav>
 
 <!-- HERO -->
@@ -575,111 +576,93 @@
   </div>
 
   <div class="imoveis-grid">
-    <div class="card-imovel">
+    <div class="card-imovel" onclick="abrirDetalhes(1)" style="cursor:pointer">
       <div class="card-img" style="background:none;padding:0;position:relative">
-        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80" alt="Casa" style="width:100%;height:100%;object-fit:cover">
+        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80" alt="Destaque" style="width:100%;height:100%;object-fit:cover">
         <div class="card-tag destaque">Destaque</div>
-
-        <button onclick="abrirTour('https://kuula.co/share/collection/7Tl5W?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1')" style="position:absolute;bottom:10px;right:10px;background:rgba(10,20,36,0.85);color:#C9A84C;border:1px solid #C9A84C;border-radius:20px;padding:5px 12px;font-size:0.75rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)">🏠 Tour Virtual</button>
+        <button onclick="event.stopPropagation();abrirTour('https://kuula.co/share/collection/7Tl5W?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1')" style="position:absolute;bottom:10px;right:10px;background:rgba(10,20,36,0.85);color:#C9A84C;border:1px solid #C9A84C;border-radius:20px;padding:5px 12px;font-size:0.75rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)">🏠 Tour Virtual</button>
       </div>
       <div class="card-body">
         <div class="card-price">R$ 420.000 <span>à venda</span></div>
         <div class="card-title">Casa com quintal, edícula e churrasqueira</div>
         <div class="card-loc">📍 Jardim das Flores, São Paulo</div>
         <div class="card-features">
-          <div class="card-feat">🛏 3 quartos</div>
-          <div class="card-feat">🚿 2 banheiros</div>
-          <div class="card-feat">🚗 2 vagas</div>
+          <div class="card-feat">🛏 3 quartos</div><div class="card-feat">🚿 2 banheiros</div><div class="card-feat">🚗 2 vagas</div>
         </div>
       </div>
     </div>
-    <div class="card-imovel">
+    <div class="card-imovel" onclick="abrirDetalhes(2)" style="cursor:pointer">
       <div class="card-img" style="background:none;padding:0;position:relative">
-        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=80" alt="Apartamento" style="width:100%;height:100%;object-fit:cover">
+        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80" alt="Apartamento" style="width:100%;height:100%;object-fit:cover">
         <div class="card-tag">Apartamento</div>
-
-        <button onclick="abrirTour('https://kuula.co/share/collection/7TfF2?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1')" style="position:absolute;bottom:10px;right:10px;background:rgba(10,20,36,0.85);color:#C9A84C;border:1px solid #C9A84C;border-radius:20px;padding:5px 12px;font-size:0.75rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)">🏠 Tour Virtual</button>
+        <button onclick="event.stopPropagation();abrirTour('https://kuula.co/share/collection/7TfF2?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1')" style="position:absolute;bottom:10px;right:10px;background:rgba(10,20,36,0.85);color:#C9A84C;border:1px solid #C9A84C;border-radius:20px;padding:5px 12px;font-size:0.75rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)">🏠 Tour Virtual</button>
       </div>
       <div class="card-body">
         <div class="card-price">R$ 2.400 <span>/mês</span></div>
         <div class="card-title">Apartamento reformado, 2 quartos, próximo ao metrô</div>
         <div class="card-loc">📍 Liberdade, São Paulo</div>
         <div class="card-features">
-          <div class="card-feat">🛏 2 quartos</div>
-          <div class="card-feat">🚿 1 banheiro</div>
-          <div class="card-feat">🚗 1 vaga</div>
+          <div class="card-feat">🛏 2 quartos</div><div class="card-feat">🚿 1 banheiro</div><div class="card-feat">🚗 1 vaga</div>
         </div>
       </div>
     </div>
-    <div class="card-imovel">
+    <div class="card-imovel" onclick="abrirDetalhes(3)" style="cursor:pointer">
       <div class="card-img" style="background:none;padding:0;position:relative">
-        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80" alt="Lancamento" style="width:100%;height:100%;object-fit:cover">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80" alt="Lançamento" style="width:100%;height:100%;object-fit:cover">
         <div class="card-tag">Lançamento</div>
-
-        <button onclick="abrirTour('https://kuula.co/share/collection/7TfFV?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1')" style="position:absolute;bottom:10px;right:10px;background:rgba(10,20,36,0.85);color:#C9A84C;border:1px solid #C9A84C;border-radius:20px;padding:5px 12px;font-size:0.75rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)">🏠 Tour Virtual</button>
+        <button onclick="event.stopPropagation();abrirTour('https://kuula.co/share/collection/7TfFV?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1')" style="position:absolute;bottom:10px;right:10px;background:rgba(10,20,36,0.85);color:#C9A84C;border:1px solid #C9A84C;border-radius:20px;padding:5px 12px;font-size:0.75rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)">🏠 Tour Virtual</button>
       </div>
       <div class="card-body">
         <div class="card-price">R$ 580.000 <span>à venda</span></div>
         <div class="card-title">Residencial Alto Paraíso — Lançamento 2025</div>
         <div class="card-loc">📍 Morumbi, São Paulo</div>
         <div class="card-features">
-          <div class="card-feat">🛏 3 quartos</div>
-          <div class="card-feat">🚿 2 banheiros</div>
-          <div class="card-feat">🏊 Piscina</div>
+          <div class="card-feat">🛏 3 quartos</div><div class="card-feat">🚿 2 banheiros</div><div class="card-feat">🏊 Piscina</div>
         </div>
       </div>
     </div>
-    <div class="card-imovel">
+    <div class="card-imovel" onclick="abrirDetalhes(4)" style="cursor:pointer">
       <div class="card-img" style="background:none;padding:0;position:relative">
-        <img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=600&q=80" alt="Casa" style="width:100%;height:100%;object-fit:cover">
+        <img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=800&q=80" alt="Casa" style="width:100%;height:100%;object-fit:cover">
         <div class="card-tag">Casa</div>
-
-        <button onclick="abrirTour('https://kuula.co/share/collection/7TG8p?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1')" style="position:absolute;bottom:10px;right:10px;background:rgba(10,20,36,0.85);color:#C9A84C;border:1px solid #C9A84C;border-radius:20px;padding:5px 12px;font-size:0.75rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)">🏠 Tour Virtual</button>
+        <button onclick="event.stopPropagation();abrirTour('https://kuula.co/share/collection/7TG8p?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1')" style="position:absolute;bottom:10px;right:10px;background:rgba(10,20,36,0.85);color:#C9A84C;border:1px solid #C9A84C;border-radius:20px;padding:5px 12px;font-size:0.75rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)">🏠 Tour Virtual</button>
       </div>
       <div class="card-body">
         <div class="card-price">R$ 890.000 <span>à venda</span></div>
         <div class="card-title">Casa em condomínio com área gourmet e piscina</div>
         <div class="card-loc">📍 Alphaville, Barueri</div>
         <div class="card-features">
-          <div class="card-feat">🛏 4 quartos</div>
-          <div class="card-feat">🚿 3 banheiros</div>
-          <div class="card-feat">🚗 3 vagas</div>
+          <div class="card-feat">🛏 4 quartos</div><div class="card-feat">🚿 3 banheiros</div><div class="card-feat">🚗 3 vagas</div>
         </div>
       </div>
     </div>
-    <div class="card-imovel">
+    <div class="card-imovel" onclick="abrirDetalhes(5)" style="cursor:pointer">
       <div class="card-img" style="background:none;padding:0;position:relative">
-        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=80" alt="Apartamento" style="width:100%;height:100%;object-fit:cover">
+        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80" alt="Novo" style="width:100%;height:100%;object-fit:cover">
         <div class="card-tag destaque">Novo</div>
-
-        <button onclick="abrirTour('https://kuula.co/share/collection/7TG6B?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1')" style="position:absolute;bottom:10px;right:10px;background:rgba(10,20,36,0.85);color:#C9A84C;border:1px solid #C9A84C;border-radius:20px;padding:5px 12px;font-size:0.75rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)">🏠 Tour Virtual</button>
+        <button onclick="event.stopPropagation();abrirTour('https://kuula.co/share/collection/7TG6B?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1')" style="position:absolute;bottom:10px;right:10px;background:rgba(10,20,36,0.85);color:#C9A84C;border:1px solid #C9A84C;border-radius:20px;padding:5px 12px;font-size:0.75rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)">🏠 Tour Virtual</button>
       </div>
       <div class="card-body">
         <div class="card-price">R$ 3.200 <span>/mês</span></div>
         <div class="card-title">Flat alto padrão com varanda e vista livre</div>
         <div class="card-loc">📍 Jardins, São Paulo</div>
         <div class="card-features">
-          <div class="card-feat">🛏 1 suíte</div>
-          <div class="card-feat">🚿 1 banheiro</div>
-          <div class="card-feat">🚗 1 vaga</div>
+          <div class="card-feat">🛏 1 quarto</div><div class="card-feat">🚿 1 banheiro</div><div class="card-feat">🚗 1 vaga</div>
         </div>
       </div>
     </div>
-    <div class="card-imovel">
+    <div class="card-imovel" onclick="abrirDetalhes(6)" style="cursor:pointer">
       <div class="card-img" style="background:none;padding:0;position:relative">
-        <img src="https://images.unsplash.com/photo-1628745277894-3b0b67952002?w=600&q=80" alt="Casa" style="width:100%;height:100%;object-fit:cover">
+        <img src="https://images.unsplash.com/photo-1628745277894-3b0b67952002?w=800&q=80" alt="Terreno" style="width:100%;height:100%;object-fit:cover">
         <div class="card-tag">Terreno</div>
-
-        <button onclick="abrirTour('https://kuula.co/share/collection/7TLlz?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1')" style="position:absolute;bottom:10px;right:10px;background:rgba(10,20,36,0.85);color:#C9A84C;border:1px solid #C9A84C;border-radius:20px;padding:5px 12px;font-size:0.75rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)">🏠 Tour Virtual</button>
+        <button onclick="event.stopPropagation();abrirTour('https://kuula.co/share/collection/7TLlz?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1')" style="position:absolute;bottom:10px;right:10px;background:rgba(10,20,36,0.85);color:#C9A84C;border:1px solid #C9A84C;border-radius:20px;padding:5px 12px;font-size:0.75rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)">🏠 Tour Virtual</button>
       </div>
       <div class="card-body">
         <div class="card-price">R$ 145.000 <span>à venda</span></div>
         <div class="card-title">Terreno plano em condomínio fechado com acesso 24h</div>
         <div class="card-loc">📍 Cotia, São Paulo</div>
         <div class="card-features">
-          <div class="card-feat">📐 360m²</div>
-          <div class="card-feat">🌳 Arborizado</div>
-          <div class="card-feat">🔒 Condomínio</div>
+          <div class="card-feat">📐 360m²</div><div class="card-feat">🌳 Arborizado</div><div class="card-feat">🔒 Condomínio</div>
         </div>
       </div>
     </div>
@@ -1747,11 +1730,19 @@ O contrato deve ter: cabeçalho, cláusulas numeradas (mínimo 8 cláusulas), es
 
   async function chamarIA(mensagem, tipo) {
     const prompts = {
-      chat: `Você é Sofia, assistente virtual de uma imobiliária brasileira premium com 30 anos de mercado. 
-Seja atenciosa, profissional e conhecedora do mercado imobiliário. 
+      chat: `Você é Sofia, assistente virtual da ImóvelAI. Seja atenciosa e profissional.
 Responda em português, de forma clara e objetiva (máximo 3 parágrafos curtos).
 Quando o cliente demonstrar interesse em visitar ou comprar, ofereça conectá-lo com um corretor.
-Não invente preços ou endereços específicos.`,
+
+CATÁLOGO ATUAL DE IMÓVEIS DISPONÍVEIS:
+1. Casa com quintal, edícula e churrasqueira — R$ 420.000 — Jardim das Flores, São Paulo — 3 quartos, 2 banheiros, 2 vagas
+2. Apartamento reformado, 2 quartos, próximo ao metrô — R$ 2.400/mês — Liberdade, São Paulo — 2 quartos, 1 banheiro, 1 vaga
+3. Residencial Alto Paraíso (Lançamento) — R$ 580.000 — Morumbi, São Paulo — 3 quartos, 2 banheiros, piscina
+4. Casa em condomínio com área gourmet e piscina — R$ 890.000 — Alphaville, Barueri — 4 quartos, 3 banheiros, 3 vagas
+5. Flat alto padrão com varanda e vista livre — R$ 3.200/mês — Jardins, São Paulo — 1 suíte, 1 banheiro, 1 vaga
+6. Terreno plano em condomínio fechado com acesso 24h — R$ 145.000 — Cotia, São Paulo — 360m²
+
+Se o cliente buscar imóvel em cidade ou bairro que NÃO está no catálogo acima, diga honestamente que ainda não temos imóveis nessa localidade, mas que pode cadastrar o interesse para quando tivermos. Nunca invente imóveis fora deste catálogo.`,
       busca: `Você é um consultor imobiliário especialista com 30 anos de experiência.
 Analise a busca do cliente e responda em português com:
 1. Um resumo do que o cliente busca
@@ -1784,6 +1775,49 @@ Máximo 4 linhas. Sem enrolação.`
     return 'Não foi possível processar. Tente novamente.'
   }
 
+
+  // ============ DADOS DOS IMÓVEIS ============
+  const catalogoImoveis = [{'id': 1, 'tag': 'Destaque', 'img': 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80', 'titulo': 'Casa com quintal, edícula e churrasqueira', 'preco': 'R$ 420.000', 'tipo': 'à venda', 'bairro': 'Jardim das Flores, São Paulo', 'quartos': 3, 'banheiros': 2, 'vagas': 2, 'area': '180m²', 'descricao': 'Excelente casa com quintal amplo, edícula completa para hóspedes ou renda extra, churrasqueira coberta e área de lazer. Localizada em bairro tranquilo, próxima a escolas e comércio.', 'tour': 'https://kuula.co/share/collection/7Tl5W?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1'}, {'id': 2, 'tag': 'Apartamento', 'img': 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80', 'titulo': 'Apartamento reformado, 2 quartos, próximo ao metrô', 'preco': 'R$ 2.400', 'tipo': '/mês', 'bairro': 'Liberdade, São Paulo', 'quartos': 2, 'banheiros': 1, 'vagas': 1, 'area': '68m²', 'descricao': 'Apartamento totalmente reformado, acabamento moderno, cozinha americana integrada. A 5 minutos a pé do metrô Liberdade, com acesso fácil a toda a cidade.', 'tour': 'https://kuula.co/share/collection/7TfF2?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1'}, {'id': 3, 'tag': 'Lançamento', 'img': 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80', 'titulo': 'Residencial Alto Paraíso — Lançamento 2025', 'preco': 'R$ 580.000', 'tipo': 'à venda', 'bairro': 'Morumbi, São Paulo', 'quartos': 3, 'banheiros': 2, 'vagas': 2, 'area': '120m²', 'descricao': 'Lançamento exclusivo no Morumbi. Condomínio fechado com piscina, academia, salão de festas e segurança 24h. Entrega prevista para dezembro de 2025.', 'tour': 'https://kuula.co/share/collection/7TfFV?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1'}, {'id': 4, 'tag': 'Casa', 'img': 'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=800&q=80', 'titulo': 'Casa em condomínio com área gourmet e piscina', 'preco': 'R$ 890.000', 'tipo': 'à venda', 'bairro': 'Alphaville, Barueri', 'quartos': 4, 'banheiros': 3, 'vagas': 3, 'area': '280m²', 'descricao': 'Casa de alto padrão em condomínio fechado de Alphaville. Área gourmet completa, piscina privativa, jardim paisagístico e acabamento de luxo. Condomínio com segurança 24h.', 'tour': 'https://kuula.co/share/collection/7TG8p?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1'}, {'id': 5, 'tag': 'Novo', 'img': 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80', 'titulo': 'Flat alto padrão com varanda e vista livre', 'preco': 'R$ 3.200', 'tipo': '/mês', 'bairro': 'Jardins, São Paulo', 'quartos': 1, 'banheiros': 1, 'vagas': 1, 'area': '52m²', 'descricao': 'Flat sofisticado nos Jardins, um dos bairros mais valorizados de SP. Varanda com vista livre, decoração contemporânea, serviços de hotel inclusos. Ideal para executivos.', 'tour': 'https://kuula.co/share/collection/7TG6B?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1'}, {'id': 6, 'tag': 'Terreno', 'img': 'https://images.unsplash.com/photo-1628745277894-3b0b67952002?w=800&q=80', 'titulo': 'Terreno plano em condomínio fechado com acesso 24h', 'preco': 'R$ 145.000', 'tipo': 'à venda', 'bairro': 'Cotia, São Paulo', 'quartos': 0, 'banheiros': 0, 'vagas': 0, 'area': '360m²', 'descricao': 'Terreno plano e arborizado em condomínio fechado com segurança 24h. Documentação em dia, pronto para construir. Excelente oportunidade de investimento na Grande SP.', 'tour': 'https://kuula.co/share/collection/7TLlz?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1'}];
+
+  function abrirDetalhes(id) {
+    const im = catalogoImoveis.find(i => i.id === id);
+    if (!im) return;
+    const featsHtml = [
+      im.quartos > 0 ? `<div style="text-align:center;background:var(--gray);border-radius:10px;padding:14px 20px"><div style="font-size:1.4rem">🛏</div><div style="font-weight:700;font-size:1.1rem;color:var(--navy)">${im.quartos}</div><div style="font-size:0.75rem;color:var(--gray-mid)">Quartos</div></div>` : '',
+      im.banheiros > 0 ? `<div style="text-align:center;background:var(--gray);border-radius:10px;padding:14px 20px"><div style="font-size:1.4rem">🚿</div><div style="font-weight:700;font-size:1.1rem;color:var(--navy)">${im.banheiros}</div><div style="font-size:0.75rem;color:var(--gray-mid)">Banheiros</div></div>` : '',
+      im.vagas > 0 ? `<div style="text-align:center;background:var(--gray);border-radius:10px;padding:14px 20px"><div style="font-size:1.4rem">🚗</div><div style="font-weight:700;font-size:1.1rem;color:var(--navy)">${im.vagas}</div><div style="font-size:0.75rem;color:var(--gray-mid)">Vagas</div></div>` : '',
+      `<div style="text-align:center;background:var(--gray);border-radius:10px;padding:14px 20px"><div style="font-size:1.4rem">📐</div><div style="font-weight:700;font-size:1.1rem;color:var(--navy)">${im.area}</div><div style="font-size:0.75rem;color:var(--gray-mid)">Área</div></div>`,
+    ].filter(Boolean).join('');
+
+    const modal = document.getElementById('modal-detalhes');
+    document.getElementById('modal-body').innerHTML = `
+      <div style="position:relative">
+        <img src="${im.img}" alt="${im.titulo}" style="width:100%;height:260px;object-fit:cover;border-radius:14px 14px 0 0">
+        <span style="position:absolute;top:14px;left:14px;background:var(--gold);color:var(--navy);padding:4px 12px;border-radius:20px;font-size:0.78rem;font-weight:700">${im.tag}</span>
+        <button onclick="fecharDetalhes()" style="position:absolute;top:14px;right:14px;background:rgba(0,0,0,0.5);border:none;color:white;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1.1rem">✕</button>
+      </div>
+      <div style="padding:24px">
+        <div style="font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin-bottom:4px">${im.preco} <span style="font-size:0.9rem;font-weight:400;font-family:Inter,sans-serif;color:var(--gray-mid)">${im.tipo}</span></div>
+        <h3 style="font-size:1.05rem;font-weight:600;color:var(--text);margin:8px 0 4px">${im.titulo}</h3>
+        <div style="font-size:0.85rem;color:var(--gray-mid);margin-bottom:20px">📍 ${im.bairro}</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:10px;margin-bottom:20px">${featsHtml}</div>
+        <p style="font-size:0.9rem;color:var(--text-light);line-height:1.7;margin-bottom:24px">${im.descricao}</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button onclick="abrirTour('${im.tour}')" style="flex:1;min-width:140px;background:var(--navy);color:white;border:none;padding:13px 20px;border-radius:10px;font-size:0.9rem;font-weight:600;cursor:pointer">🏠 Tour Virtual 360°</button>
+          <button onclick="fecharDetalhes();document.getElementById('chat-btn').click()" style="flex:1;min-width:140px;background:var(--gold);color:var(--navy);border:none;padding:13px 20px;border-radius:10px;font-size:0.9rem;font-weight:600;cursor:pointer">💬 Falar com Sofia</button>
+        </div>
+      </div>`;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function fecharDetalhes() {
+    document.getElementById('modal-detalhes').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  window.abrirDetalhes = abrirDetalhes;
+  window.fecharDetalhes = fecharDetalhes;
+
   // ============ EXPOR FUNÇÕES GLOBALMENTE ============
   window.loginGoogle = loginGoogle;
   window.logout = logout;
@@ -1808,14 +1842,8 @@ Máximo 4 linhas. Sem enrolação.`
 <style>
   /* BOTÃO ACESSO PAINEL */
   #btn-painel {
-    position: fixed; top: 72px; right: 20px; z-index: 150;
-    background: var(--gold); color: var(--navy);
-    border: none; padding: 9px 18px; border-radius: 8px;
-    font-size: 0.82rem; font-weight: 700; cursor: pointer;
-    box-shadow: 0 2px 12px rgba(201,168,76,0.4);
-    transition: transform 0.15s;
+    display: none; /* substituído pelo botão na nav */
   }
-  #btn-painel:hover { transform: scale(1.04); }
 
   /* OVERLAY */
   #painel-overlay {
@@ -2199,6 +2227,11 @@ Máximo 4 linhas. Sem enrolação.`
     </div>
 
   </div>
+</div>
+
+<!-- MODAL DETALHES IMÓVEL -->
+<div id="modal-detalhes" onclick="if(event.target===this)fecharDetalhes()" style="display:none;position:fixed;inset:0;z-index:400;background:rgba(10,20,36,0.6);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:16px">
+  <div id="modal-body" onclick="event.stopPropagation()" style="background:white;border-radius:16px;width:100%;max-width:540px;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,0.3)"></div>
 </div>
 
 </body>
