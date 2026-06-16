@@ -890,12 +890,16 @@
   verificarSessao();
 
   async function loginGoogle() {
-    await sb.auth.signInWithOAuth({
+    const { error } = await sb.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: window.location.href
+        redirectTo: 'https://imovelai.netlify.app'
       }
     });
+    if (error) {
+      alert('Erro ao fazer login: ' + error.message);
+      console.error('OAuth error:', error);
+    }
   }
 
   async function logout() {
