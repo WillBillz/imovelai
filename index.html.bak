@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
@@ -7,27 +7,27 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
 <link rel="apple-touch-icon" href="/assets/favicon-48.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HomeAI — Find Your Perfect Home with Intelligence</title>
+<title>ImóvelAI — Encontre seu imóvel com inteligência</title>
 
 <!-- Open Graph / WhatsApp / Social -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://homeai.netlify.app/">
-<meta property="og:title" content="HomeAI — Find Your Perfect Home with Intelligence">
-<meta property="og:description" content="AI-powered property search, 360° virtual tours, 24h chat with Aria, and a full agent dashboard. The future of real estate is here.">
-<meta property="og:image" content="https://homeai.netlify.app/assets/og-image.png">
+<meta property="og:url" content="https://imovelai.netlify.app/">
+<meta property="og:title" content="ImóvelAI — Encontre seu imóvel com inteligência">
+<meta property="og:description" content="Busca inteligente com IA, tour virtual 360°, chat Sofia 24h e painel completo para corretores. O futuro da imobiliária chegou.">
+<meta property="og:image" content="https://imovelai.netlify.app/assets/og-image.png">
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="1280">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="HomeAI">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="ImóvelAI">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="HomeAI — Find Your Perfect Home with Intelligence">
-<meta name="twitter:description" content="AI-powered search, 360° virtual tours, 24h AI chat with Aria, and a complete agent dashboard.">
-<meta name="twitter:image" content="https://homeai.netlify.app/assets/og-image.png">
+<meta name="twitter:title" content="ImóvelAI — Encontre seu imóvel com inteligência">
+<meta name="twitter:description" content="Busca inteligente com IA, tour virtual 360°, chat Sofia 24h e painel completo para corretores.">
+<meta name="twitter:image" content="https://imovelai.netlify.app/assets/og-image.png">
 
 <!-- WhatsApp / iMessage extra hint -->
-<meta name="description" content="AI-powered property search, 360° virtual tours, 24h chat with Aria, and a full agent dashboard. The future of real estate is here.">
+<meta name="description" content="Busca inteligente com IA, tour virtual 360°, chat Sofia 24h e painel completo para corretores. O futuro da imobiliária chegou.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -529,38 +529,38 @@
 <!-- NAV -->
 <nav>
   <div class="logo">
-    <img src="/assets/logo-nav.png" alt="HomeAI" style="height:38px;width:auto;object-fit:contain">
+    <img src="/assets/logo-nav.png" alt="ImóvelAI" style="height:38px;width:auto;object-fit:contain">
   </div>
   <div class="nav-links">
-    <a href="#">Buy</a>
-    <a href="#">Rent</a>
+    <a href="#">Comprar</a>
+    <a href="#">Alugar</a>
     <a href="#">Lançamentos</a>
-    <a href="#">About</a>
-    <a href="#" class="nav-cta">Contact Agent</a>
+    <a href="#">Sobre</a>
+    <a href="#" class="nav-cta">Fale com corretor</a>
   </div>
   <button onclick="abrirFormAnuncio()" style="background:white;color:var(--navy);border:2px solid var(--navy);padding:9px 16px;border-radius:8px;font-size:0.82rem;font-weight:700;cursor:pointer;white-space:nowrap;margin-right:8px">🏠 Anuncie seu Imóvel</button>
-  <button id="btn-painel-nav" onclick="abrirPainel()" style="background:var(--gold);color:var(--navy);border:none;padding:9px 18px;border-radius:8px;font-size:0.82rem;font-weight:700;cursor:pointer;box-shadow:0 2px 12px rgba(201,168,76,0.4);white-space:nowrap">⚡ Agent Dashboard</button>
+  <button id="btn-painel-nav" onclick="abrirPainel()" style="background:var(--gold);color:var(--navy);border:none;padding:9px 18px;border-radius:8px;font-size:0.82rem;font-weight:700;cursor:pointer;box-shadow:0 2px 12px rgba(201,168,76,0.4);white-space:nowrap">⚡ Painel do Corretor</button>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-content">
 
-    <h1>Find the right home <em>the smart way</em></h1>
+    <h1>Encontre o imóvel certo <em>do jeito certo</em></h1>
     <p>Descreva o que você procura em suas próprias palavras.<br>Nossa IA entende e encontra as melhores opções para você.</p>
 
     <div class="search-box">
       <span style="font-size:1.1rem;">🔍</span>
-      <input type="text" id="search-input" placeholder="Ex: apartamento 2 beds perto de escola até R$400mil com varanda...">
+      <input type="text" id="search-input" placeholder="Ex: apartamento 2 quartos perto de escola até R$400mil com varanda...">
       <button class="search-btn" onclick="buscarComIA()">
-        ✦ Search with AI
+        ✦ Buscar com IA
       </button>
     </div>
 
     <div class="search-examples">
-      <span class="search-example" onclick="preencherBusca(this)">House with backyard in a quiet neighborhood</span>
-      <span class="search-example" onclick="preencherBusca(this)">Compact apartment near downtown</span>
-      <span class="search-example" onclick="preencherBusca(this)">Land for construction up to $200k</span>
+      <span class="search-example" onclick="preencherBusca(this)">Casa com quintal em bairro tranquilo</span>
+      <span class="search-example" onclick="preencherBusca(this)">Apt compacto próximo ao centro</span>
+      <span class="search-example" onclick="preencherBusca(this)">Terreno para construção até R$200mil</span>
     </div>
 
     <div class="stats">
@@ -585,9 +585,9 @@
       <div class="section-title">Imóveis em destaque</div>
     </div>
     <div class="filtros">
-      <button class="filtro-btn active">All</button>
-      <button class="filtro-btn">Buy</button>
-      <button class="filtro-btn">Rent</button>
+      <button class="filtro-btn active">Todos</button>
+      <button class="filtro-btn">Comprar</button>
+      <button class="filtro-btn">Alugar</button>
       <button class="filtro-btn">Lançamentos</button>
     </div>
   </div>
@@ -600,26 +600,26 @@
         <button onclick="event.stopPropagation();abrirTour('https://kuula.co/share/collection/7Tl5W?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1')" style="position:absolute;bottom:10px;right:10px;background:rgba(10,20,36,0.85);color:#C9A84C;border:1px solid #C9A84C;border-radius:20px;padding:5px 12px;font-size:0.75rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)">🏠 Tour Virtual</button>
       </div>
       <div class="card-body">
-        <div class="card-price">$420,000 <span>à venda</span></div>
-        <div class="card-title">House with backyard, studio suite & outdoor grill</div>
-        <div class="card-loc">📍 Maple Grove, Austin TX</div>
+        <div class="card-price">R$ 420.000 <span>à venda</span></div>
+        <div class="card-title">Casa com quintal, edícula e churrasqueira</div>
+        <div class="card-loc">📍 Jardim das Flores, São Paulo</div>
         <div class="card-features">
-          <div class="card-feat">🛏 3 beds</div><div class="card-feat">🚿 2 baths</div><div class="card-feat">🚗 2 vagas</div>
+          <div class="card-feat">🛏 3 quartos</div><div class="card-feat">🚿 2 banheiros</div><div class="card-feat">🚗 2 vagas</div>
         </div>
       </div>
     </div>
     <div class="card-imovel" onclick="abrirDetalhes(2)" style="cursor:pointer">
       <div class="card-img" style="background:none;padding:0;position:relative">
         <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80" alt="Apartamento" style="width:100%;height:100%;object-fit:cover">
-        <div class="card-tag">Apartment</div>
+        <div class="card-tag">Apartamento</div>
         <button onclick="event.stopPropagation();abrirTour('https://kuula.co/share/collection/7TfF2?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1')" style="position:absolute;bottom:10px;right:10px;background:rgba(10,20,36,0.85);color:#C9A84C;border:1px solid #C9A84C;border-radius:20px;padding:5px 12px;font-size:0.75rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)">🏠 Tour Virtual</button>
       </div>
       <div class="card-body">
-        <div class="card-price">$ 2.400 <span>/mês</span></div>
-        <div class="card-title">Renovated apartment, 2 bed, near subway</div>
-        <div class="card-loc">📍 Midtown, New York NY</div>
+        <div class="card-price">R$ 2.400 <span>/mês</span></div>
+        <div class="card-title">Apartamento reformado, 2 quartos, próximo ao metrô</div>
+        <div class="card-loc">📍 Liberdade, São Paulo</div>
         <div class="card-features">
-          <div class="card-feat">🛏 2 beds</div><div class="card-feat">🚿 1 bath</div><div class="card-feat">🚗 1 vaga</div>
+          <div class="card-feat">🛏 2 quartos</div><div class="card-feat">🚿 1 banheiro</div><div class="card-feat">🚗 1 vaga</div>
         </div>
       </div>
     </div>
@@ -630,26 +630,26 @@
         <button onclick="event.stopPropagation();abrirTour('https://kuula.co/share/collection/7TfFV?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1')" style="position:absolute;bottom:10px;right:10px;background:rgba(10,20,36,0.85);color:#C9A84C;border:1px solid #C9A84C;border-radius:20px;padding:5px 12px;font-size:0.75rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)">🏠 Tour Virtual</button>
       </div>
       <div class="card-body">
-        <div class="card-price">$580,000 <span>à venda</span></div>
+        <div class="card-price">R$ 580.000 <span>à venda</span></div>
         <div class="card-title">Residencial Alto Paraíso — Lançamento 2025</div>
-        <div class="card-loc">📍 Beverly Hills, Los Angeles CA</div>
+        <div class="card-loc">📍 Morumbi, São Paulo</div>
         <div class="card-features">
-          <div class="card-feat">🛏 3 beds</div><div class="card-feat">🚿 2 baths</div><div class="card-feat">🏊 Pool</div>
+          <div class="card-feat">🛏 3 quartos</div><div class="card-feat">🚿 2 banheiros</div><div class="card-feat">🏊 Piscina</div>
         </div>
       </div>
     </div>
     <div class="card-imovel" onclick="abrirDetalhes(4)" style="cursor:pointer">
       <div class="card-img" style="background:none;padding:0;position:relative">
         <img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=800&q=80" alt="Casa" style="width:100%;height:100%;object-fit:cover">
-        <div class="card-tag">House</div>
+        <div class="card-tag">Casa</div>
         <button onclick="event.stopPropagation();abrirTour('https://kuula.co/share/collection/7TG8p?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1')" style="position:absolute;bottom:10px;right:10px;background:rgba(10,20,36,0.85);color:#C9A84C;border:1px solid #C9A84C;border-radius:20px;padding:5px 12px;font-size:0.75rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)">🏠 Tour Virtual</button>
       </div>
       <div class="card-body">
-        <div class="card-price">$890,000 <span>à venda</span></div>
-        <div class="card-title">Gated community home with gourmet area & pool</div>
+        <div class="card-price">R$ 890.000 <span>à venda</span></div>
+        <div class="card-title">Casa em condomínio com área gourmet e piscina</div>
         <div class="card-loc">📍 Alphaville, Barueri</div>
         <div class="card-features">
-          <div class="card-feat">🛏 4 beds</div><div class="card-feat">🚿 3 baths</div><div class="card-feat">🚗 3 vagas</div>
+          <div class="card-feat">🛏 4 quartos</div><div class="card-feat">🚿 3 banheiros</div><div class="card-feat">🚗 3 vagas</div>
         </div>
       </div>
     </div>
@@ -660,26 +660,26 @@
         <button onclick="event.stopPropagation();abrirTour('https://kuula.co/share/collection/7TG6B?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1')" style="position:absolute;bottom:10px;right:10px;background:rgba(10,20,36,0.85);color:#C9A84C;border:1px solid #C9A84C;border-radius:20px;padding:5px 12px;font-size:0.75rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)">🏠 Tour Virtual</button>
       </div>
       <div class="card-body">
-        <div class="card-price">$ 3.200 <span>/mês</span></div>
+        <div class="card-price">R$ 3.200 <span>/mês</span></div>
         <div class="card-title">Flat alto padrão com varanda e vista livre</div>
-        <div class="card-loc">📍 Buckhead, Atlanta GA</div>
+        <div class="card-loc">📍 Jardins, São Paulo</div>
         <div class="card-features">
-          <div class="card-feat">🛏 1 bed</div><div class="card-feat">🚿 1 bath</div><div class="card-feat">🚗 1 vaga</div>
+          <div class="card-feat">🛏 1 quarto</div><div class="card-feat">🚿 1 banheiro</div><div class="card-feat">🚗 1 vaga</div>
         </div>
       </div>
     </div>
     <div class="card-imovel" onclick="abrirDetalhes(6)" style="cursor:pointer">
       <div class="card-img" style="background:none;padding:0;position:relative">
         <img src="https://images.unsplash.com/photo-1628745277894-3b0b67952002?w=800&q=80" alt="Terreno" style="width:100%;height:100%;object-fit:cover">
-        <div class="card-tag">Land</div>
+        <div class="card-tag">Terreno</div>
         <button onclick="event.stopPropagation();abrirTour('https://kuula.co/share/collection/7TLlz?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1')" style="position:absolute;bottom:10px;right:10px;background:rgba(10,20,36,0.85);color:#C9A84C;border:1px solid #C9A84C;border-radius:20px;padding:5px 12px;font-size:0.75rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)">🏠 Tour Virtual</button>
       </div>
       <div class="card-body">
-        <div class="card-price">$ 145.000 <span>à venda</span></div>
-        <div class="card-title">Flat lot in gated community with 24h access</div>
-        <div class="card-loc">📍 Lake Highlands, Dallas TX</div>
+        <div class="card-price">R$ 145.000 <span>à venda</span></div>
+        <div class="card-title">Terreno plano em condomínio fechado com acesso 24h</div>
+        <div class="card-loc">📍 Cotia, São Paulo</div>
         <div class="card-features">
-          <div class="card-feat">📐 360sq ft</div><div class="card-feat">🌳 Tree-lined</div><div class="card-feat">🔒 Gated</div>
+          <div class="card-feat">📐 360m²</div><div class="card-feat">🌳 Arborizado</div><div class="card-feat">🔒 Condomínio</div>
         </div>
       </div>
     </div>
@@ -690,9 +690,9 @@
 <div style="background:linear-gradient(135deg,var(--navy) 0%,#0d2440 100%);padding:60px 40px;text-align:center;margin-top:0">
   <div style="max-width:600px;margin:0 auto">
     <div style="font-size:2.5rem;margin-bottom:12px">🏠</div>
-    <h2 style="font-family:'Playfair Display',serif;color:white;font-size:1.8rem;margin-bottom:10px">Want to sell or rent your property?</h2>
-    <p style="color:rgba(255,255,255,0.7);font-size:1rem;margin-bottom:28px;line-height:1.6">List your property for free and our team will reach out. Fast, simple, no paperwork.</p>
-    <button onclick="abrirFormAnuncio()" style="background:var(--gold);color:var(--navy);border:none;padding:16px 36px;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(201,168,76,0.4)">📋 List My Property for Free</button>
+    <h2 style="font-family:'Playfair Display',serif;color:white;font-size:1.8rem;margin-bottom:10px">Quer vender ou alugar seu imóvel?</h2>
+    <p style="color:rgba(255,255,255,0.7);font-size:1rem;margin-bottom:28px;line-height:1.6">Cadastre seu imóvel gratuitamente e nossa equipe entra em contato. Rápido, simples e sem burocracia.</p>
+    <button onclick="abrirFormAnuncio()" style="background:var(--gold);color:var(--navy);border:none;padding:16px 36px;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(201,168,76,0.4)">📋 Anunciar meu imóvel gratuitamente</button>
   </div>
 </div>
 
@@ -701,7 +701,7 @@
   <div class="how-inner">
     <div class="section-label">Como funciona</div>
     <div class="section-title">Simples como uma conversa</div>
-    <div class="section-sub">Our AI understands what you need and connects you with the perfect property — no complicated filters.</div>
+    <div class="section-sub">Nossa IA entende o que você precisa e te conecta com o imóvel ideal — sem filtros complicados.</div>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
@@ -711,7 +711,7 @@
       <div class="step">
         <div class="step-num">2</div>
         <h3>A IA analisa e filtra</h3>
-        <p>Our artificial intelligence understands your needs and curates the best options from our portfolio.</p>
+        <p>Nossa inteligência artificial entende sua necessidade e seleciona as melhores opções do portfólio.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
@@ -721,7 +721,7 @@
       <div class="step">
         <div class="step-num">4</div>
         <h3>Agende sua visita</h3>
-        <p>Speak directly with our specialist agent and schedule a visit at your convenience.</p>
+        <p>Fale diretamente com nosso corretor especializado e agende uma visita no horário que preferir.</p>
       </div>
     </div>
   </div>
@@ -729,8 +729,8 @@
 
 <!-- FOOTER -->
 <footer>
-  <p><strong>HomeAI</strong> — Real estate technology and expertise at your service.<br>
-  <span style="font-size:0.75rem; opacity:0.5; margin-top:8px; display:block;">© 2026 HomeAI. Built with ✦ AI</span></p>
+  <p><strong>ImóvelAI</strong> — Tecnologia e expertise imobiliária a seu serviço.<br>
+  <span style="font-size:0.75rem; opacity:0.5; margin-top:8px; display:block;">© 2026 ImóvelAI. Desenvolvido com ✦ IA</span></p>
 </footer>
 
 <!-- CHAT BTN -->
@@ -744,13 +744,13 @@
   <div class="chat-header">
     <div class="chat-avatar">🤖</div>
     <div class="chat-header-info">
-      <h4>Aria — AI Assistant</h4>
+      <h4>Sofia — Assistente IA</h4>
       <p class="chat-online">Online agora</p>
     </div>
   </div>
   <div class="chat-messages" id="chat-messages">
     <div class="msg bot">
-      <div class="msg-bubble">Hello! 👋 I'm Aria, HomeAI's AI assistant. I can help you find your ideal property, answer questions, or schedule a visit. How can I help you?</div>
+      <div class="msg-bubble">Olá! 👋 Sou a Sofia, assistente da ImóvelAI. Posso te ajudar a encontrar o imóvel ideal, tirar dúvidas ou agendar uma visita. Como posso te ajudar?</div>
       <div class="msg-time">Agora</div>
     </div>
   </div>
@@ -800,7 +800,7 @@
     if (!leadCapturado && detectarInteresse(msg)) {
       leadCapturado = true;
       setTimeout(() => {
-        addMsg('To better assist you, could you share your name and phone number? One of our agents will reach out shortly! 😊', 'bot');
+        addMsg('Para te ajudar melhor, pode me informar seu nome e telefone? Um de nossos corretores entrará em contato! 😊', 'bot');
         document.getElementById('chat-input').placeholder = 'Digite seu nome e telefone...';
       }, 1000);
     }
@@ -818,7 +818,7 @@
   }
 
   function detectarInteresse(msg) {
-    const palavras = ['want', 'interested', 'visit', 'buy', 'rent', 'how much', 'price', 'available', 'see', 'show'];
+    const palavras = ['quero', 'interesse', 'visitar', 'comprar', 'alugar', 'quanto', 'valor', 'preço', 'disponível', 'ver'];
     return palavras.some(p => msg.toLowerCase().includes(p));
   }
 
@@ -826,7 +826,7 @@
     const msgs = document.getElementById('chat-messages');
     const div = document.createElement('div');
     div.className = `msg ${type}`;
-    const agora = new Date().toLocaleTimeString('en-US', {hour:'2-digit', minute:'2-digit'});
+    const agora = new Date().toLocaleTimeString('pt-BR', {hour:'2-digit', minute:'2-digit'});
     div.innerHTML = `<div class="msg-bubble">${text}</div><div class="msg-time">${agora}</div>`;
     msgs.appendChild(div);
     msgs.scrollTop = msgs.scrollHeight;
@@ -907,7 +907,7 @@
     const { error } = await sb.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: 'https://homeai.netlify.app'
+        redirectTo: 'https://imovelai.netlify.app'
       }
     });
     if (error) {
@@ -930,7 +930,7 @@
 
   function formatarData(str) {
     if (!str) return '—';
-    return new Date(str).toLocaleDateString('en-US');
+    return new Date(str).toLocaleDateString('pt-BR');
   }
 
   // Carregar dados do Supabase
@@ -1101,8 +1101,8 @@
                   <td><strong>${im.titulo}</strong><br><span style="font-size:0.78rem;color:var(--gray-mid)">📍 ${im.bairro}</span></td>
                   <td>${im.tipo}</td>
                   <td>${im.operacao}</td>
-                  <td><strong>${im.operacao === 'Rent' ? '"$"+im.preco.toLocaleString('en-US')+'/mo' : "$"+im.preco.toLocaleString('en-US')}</strong></td>
-                  <td>${im.area}sq ft</td>
+                  <td><strong>${im.operacao === 'Aluguel' ? 'R$ '+im.preco.toLocaleString('pt-BR')+'/mês' : 'R$ '+im.preco.toLocaleString('pt-BR')}</strong></td>
+                  <td>${im.area}m²</td>
                   <td><span class="status-badge ativo">${im.status}</span></td>
                   <td>
                     <button class="btn-icon" onclick="excluirImovel(${im.id})" title="Excluir">🗑</button>
@@ -1116,7 +1116,7 @@
   }
 
   async function excluirImovel(id) {
-    if (confirm('Delete this property?')) {
+    if (confirm('Excluir este imóvel?')) {
       await sb.from('imoveis').delete().eq('id', id);
       await carregarDados();
       renderPagina('imoveis');
@@ -1198,7 +1198,7 @@
     const nome = prompt('Nome do cliente:');
     if (!nome) return;
     const telefone = prompt('Telefone:') || '—';
-    const interesse = prompt('Interesse (ex: Apartamento 2 beds):') || '—';
+    const interesse = prompt('Interesse (ex: Apartamento 2 quartos):') || '—';
     await sb.from('leads').insert({ nome, telefone, interesse, status: 'Morno', origem: 'Manual' });
     await carregarDados();
     renderPagina('leads');
@@ -1211,22 +1211,22 @@
         <div class="painel-page-header">
           <div>
             <h2>Novo Imóvel</h2>
-            <p>Add a property to the portfolio</p>
+            <p>Cadastre um imóvel no portfólio</p>
           </div>
           <button class="btn-secondary" onclick="navegarParaPagina('imoveis')">← Voltar</button>
         </div>
         <div class="form-card">
           <div class="form-grid">
             <div class="form-group form-full">
-              <label>Property title</label>
-              <input type="text" id="f-titulo" placeholder="Ex: Casa com 3 beds e piscina">
+              <label>Título do imóvel</label>
+              <input type="text" id="f-titulo" placeholder="Ex: Casa com 3 quartos e piscina">
             </div>
             <div class="form-group">
               <label>Tipo</label>
               <select id="f-tipo">
-                <option>House</option>
-                <option>Apartment</option>
-                <option>Land</option>
+                <option>Casa</option>
+                <option>Apartamento</option>
+                <option>Terreno</option>
                 <option>Comercial</option>
                 <option>Chácara</option>
               </select>
@@ -1234,8 +1234,8 @@
             <div class="form-group">
               <label>Operação</label>
               <select id="f-operacao">
-                <option>Sale</option>
-                <option>Rent</option>
+                <option>Venda</option>
+                <option>Aluguel</option>
               </select>
             </div>
             <div class="form-group">
@@ -1243,15 +1243,15 @@
               <input type="number" id="f-preco" placeholder="380000">
             </div>
             <div class="form-group">
-              <label>Neighborhood</label>
+              <label>Bairro</label>
               <input type="text" id="f-bairro" placeholder="Ex: Centro">
             </div>
             <div class="form-group">
-              <label>Bedrooms</label>
+              <label>Quartos</label>
               <input type="number" id="f-quartos" placeholder="3" min="0">
             </div>
             <div class="form-group">
-              <label>Bathrooms</label>
+              <label>Banheiros</label>
               <input type="number" id="f-banheiros" placeholder="2" min="0">
             </div>
             <div class="form-group">
@@ -1259,7 +1259,7 @@
               <input type="number" id="f-vagas" placeholder="1" min="0">
             </div>
             <div class="form-group">
-              <label>Area (sq ft)</label>
+              <label>Área (m²)</label>
               <input type="number" id="f-area" placeholder="90">
             </div>
           </div>
@@ -1273,7 +1273,7 @@
 
   async function salvarImovel() {
     const titulo = document.getElementById('f-titulo').value.trim();
-    if (!titulo) { alert('Please enter the property title.'); return; }
+    if (!titulo) { alert('Informe o título do imóvel.'); return; }
     const novoImovel = {
       titulo,
       tipo: document.getElementById('f-tipo').value,
@@ -1318,7 +1318,7 @@
               </div>
               <div class="form-group form-full">
                 <label>Imóvel</label>
-                <input type="text" id="v-imovel" placeholder="Ex: House in Maple Grove">
+                <input type="text" id="v-imovel" placeholder="Ex: Casa Jardim das Flores">
               </div>
               <div class="form-group">
                 <label>Data</label>
@@ -1359,7 +1359,7 @@
                   <tr>
                     <td><strong>${v.cliente}</strong></td>
                     <td>${v.imovel}</td>
-                    <td>${new Date(v.data+'T12:00:00').toLocaleDateString('en-US')}</td>
+                    <td>${new Date(v.data+'T12:00:00').toLocaleDateString('pt-BR')}</td>
                     <td>${v.hora}</td>
                     <td>${v.telefone || '—'}</td>
                     <td>
@@ -1427,11 +1427,11 @@
     return `
       <div class="painel-page">
         <div class="painel-page-header">
-          <div><h2>Mortgage Calculator</h2><p>Calculate installments and show your client</p></div>
+          <div><h2>Simulador de Financiamento</h2><p>Calcule parcelas e mostre ao cliente</p></div>
         </div>
         <div class="sim-main-grid">
           <div class="form-card">
-            <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gold);margin-bottom:16px">Loan Details</div>
+            <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gold);margin-bottom:16px">Dados do Financiamento</div>
             <div class="form-grid">
               <div class="form-group form-full">
                 <label>Valor do Imóvel (R$)</label>
@@ -1442,14 +1442,14 @@
                 <input type="number" id="sim-entrada" placeholder="80000" oninput="calcularFinanciamento()">
               </div>
               <div class="form-group form-full">
-                <label>Prazo (years)</label>
+                <label>Prazo (anos)</label>
                 <select id="sim-prazo" onchange="calcularFinanciamento()">
-                  <option value="10">10 years</option>
-                  <option value="15">15 years</option>
-                  <option value="20" selected>20 years</option>
-                  <option value="25">25 years</option>
-                  <option value="30">30 years</option>
-                  <option value="35">35 years</option>
+                  <option value="10">10 anos</option>
+                  <option value="15">15 anos</option>
+                  <option value="20" selected>20 anos</option>
+                  <option value="25">25 anos</option>
+                  <option value="30">30 anos</option>
+                  <option value="35">35 anos</option>
                 </select>
               </div>
               <div class="form-group form-full">
@@ -1503,25 +1503,25 @@
       <div style="width:100%">
         <div style="text-align:center;margin-bottom:20px">
           <div style="font-size:0.78rem;color:var(--gray-mid);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Parcela Mensal Estimada</div>
-          <div style="font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--navy)">$ ${parcela.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}</div>
-          <div style="font-size:0.8rem;color:var(--gray-mid)">${prazo} years — ${meses} parcelas</div>
+          <div style="font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--navy)">R$ ${parcela.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})}</div>
+          <div style="font-size:0.8rem;color:var(--gray-mid)">${prazo} anos — ${meses} parcelas</div>
         </div>
         <div class="sim-resultado-grid">
           <div style="background:white;border-radius:10px;padding:14px;text-align:center">
-            <div style="font-size:0.75rem;color:var(--gray-mid);margin-bottom:4px">Loan Amount</div>
-            <div style="font-weight:700;color:var(--navy)">$ ${financiado.toLocaleString('en-US')}</div>
+            <div style="font-size:0.75rem;color:var(--gray-mid);margin-bottom:4px">Valor Financiado</div>
+            <div style="font-weight:700;color:var(--navy)">R$ ${financiado.toLocaleString('pt-BR')}</div>
           </div>
           <div style="background:white;border-radius:10px;padding:14px;text-align:center">
             <div style="font-size:0.75rem;color:var(--gray-mid);margin-bottom:4px">Entrada (${pct_entrada}%)</div>
-            <div style="font-weight:700;color:var(--gold)">$ ${entrada.toLocaleString('en-US')}</div>
+            <div style="font-weight:700;color:var(--gold)">R$ ${entrada.toLocaleString('pt-BR')}</div>
           </div>
           <div style="background:white;border-radius:10px;padding:14px;text-align:center">
             <div style="font-size:0.75rem;color:var(--gray-mid);margin-bottom:4px">Total Pago</div>
-            <div style="font-weight:700;color:var(--navy)">$ ${totalPago.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0})}</div>
+            <div style="font-weight:700;color:var(--navy)">R$ ${totalPago.toLocaleString('pt-BR',{minimumFractionDigits:0,maximumFractionDigits:0})}</div>
           </div>
           <div style="background:white;border-radius:10px;padding:14px;text-align:center">
             <div style="font-size:0.75rem;color:var(--gray-mid);margin-bottom:4px">Total em Juros</div>
-            <div style="font-weight:700;color:#c0392b">$ ${totalJuros.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0})}</div>
+            <div style="font-weight:700;color:#c0392b">R$ ${totalJuros.toLocaleString('pt-BR',{minimumFractionDigits:0,maximumFractionDigits:0})}</div>
           </div>
         </div>
       </div>`;
@@ -1549,8 +1549,8 @@
           return `<tr style="${dest}">
             <td>${b.nome}</td>
             <td>${b.taxa}%</td>
-            <td>$ ${p.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}</td>
-            <td>$ ${tp.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0})}</td>
+            <td>R$ ${p.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})}</td>
+            <td>R$ ${tp.toLocaleString('pt-BR',{minimumFractionDigits:0,maximumFractionDigits:0})}</td>
           </tr>`;
         }).join('')}
       </tbody>`;
@@ -1563,7 +1563,7 @@
 
   function renderScore() {
     const leadsParaExibir = leads.length > 0 ? leads : [
-      { id: 'demo1', nome: 'Carlos Mendes', interesse: 'Casa 3 beds até $ 500k', status: 'Morno', origem: 'Chat IA' },
+      { id: 'demo1', nome: 'Carlos Mendes', interesse: 'Casa 3 quartos até R$ 500k', status: 'Morno', origem: 'Chat IA' },
       { id: 'demo2', nome: 'Ana Paula Souza', interesse: 'Apartamento para locação, Liberdade', status: 'Quente', origem: 'WhatsApp' },
       { id: 'demo3', nome: 'Roberto Lima', interesse: 'Terreno em Cotia', status: 'Frio', origem: 'Site' },
     ];
@@ -1717,8 +1717,8 @@ Lead: Nome: ${nome}, Interesse: ${interesse}, Status atual: ${status}, Origem: $
     const resultado = document.getElementById('contrato-resultado');
     resultado.innerHTML = `<div class="ai-loader">Gerando contrato...</div>`;
 
-    const dataFormatada = data ? new Date(data+'T12:00:00').toLocaleDateString('en-US') : 'TBD';
-    const valorFormatado = valor ? '$ ' + parseFloat(valor).toLocaleString('en-US') : 'TBD';
+    const dataFormatada = data ? new Date(data+'T12:00:00').toLocaleDateString('pt-BR') : 'a definir';
+    const valorFormatado = valor ? 'R$ ' + parseFloat(valor).toLocaleString('pt-BR') : 'a definir';
 
     const prompt = `Gere um contrato de ${tipo} completo e profissional em português brasileiro com os seguintes dados:
 - Tipo: ${tipo}
@@ -1758,27 +1758,27 @@ O contrato deve ter: cabeçalho, cláusulas numeradas (mínimo 8 cláusulas), es
 
   async function chamarIA(mensagem, tipo) {
     const prompts = {
-      chat: `You are Aria, HomeAI's virtual AI assistant. Be attentive and professional.
+      chat: `Você é Sofia, assistente virtual da ImóvelAI. Seja atenciosa e profissional.
 Responda em português, de forma clara e objetiva (máximo 3 parágrafos curtos).
-When the client shows interest in visiting or buying, offer to connect them with an agent.
+Quando o cliente demonstrar interesse em visitar ou comprar, ofereça conectá-lo com um corretor.
 
 CATÁLOGO ATUAL DE IMÓVEIS DISPONÍVEIS:
-1. House with backyard, studio suite & outdoor grill — $420,000 — Maple Grove, Austin TX — 3 beds, 2 baths, 2 vagas
-2. Renovated apartment, 2 bed, near subway — $2,400/mo — Midtown, New York NY — 2 beds, 1 bath, 1 vaga
-3. Residencial Alto Paraíso (Lançamento) — $580,000 — Beverly Hills, Los Angeles CA — 3 beds, 2 baths, pool
-4. Gated community home with gourmet area & pool — $890,000 — Alphaville, Barueri — 4 beds, 3 baths, 3 vagas
-5. Flat alto padrão com varanda e vista livre — $ 3.200/mês — Buckhead, Atlanta GA — 1 suíte, 1 bath, 1 vaga
-6. Flat lot in gated community with 24h access — $ 145.000 — Lake Highlands, Dallas TX — 360sq ft
+1. Casa com quintal, edícula e churrasqueira — R$ 420.000 — Jardim das Flores, São Paulo — 3 quartos, 2 banheiros, 2 vagas
+2. Apartamento reformado, 2 quartos, próximo ao metrô — R$ 2.400/mês — Liberdade, São Paulo — 2 quartos, 1 banheiro, 1 vaga
+3. Residencial Alto Paraíso (Lançamento) — R$ 580.000 — Morumbi, São Paulo — 3 quartos, 2 banheiros, piscina
+4. Casa em condomínio com área gourmet e piscina — R$ 890.000 — Alphaville, Barueri — 4 quartos, 3 banheiros, 3 vagas
+5. Flat alto padrão com varanda e vista livre — R$ 3.200/mês — Jardins, São Paulo — 1 suíte, 1 banheiro, 1 vaga
+6. Terreno plano em condomínio fechado com acesso 24h — R$ 145.000 — Cotia, São Paulo — 360m²
 
-If the client searches for a property in a city or neighborhood NOT in the catalog above, honestly say we don't have listings there yet, but you can register their interest for when we do. Never invent properties outside this catalog.`,
-      busca: `Você é um consultor imobiliário especialista com 30 years de experiência.
+Se o cliente buscar imóvel em cidade ou bairro que NÃO está no catálogo acima, diga honestamente que ainda não temos imóveis nessa localidade, mas que pode cadastrar o interesse para quando tivermos. Nunca invente imóveis fora deste catálogo.`,
+      busca: `Você é um consultor imobiliário especialista com 30 anos de experiência.
 Analise a busca do cliente e responda em português com:
 1. Um resumo do que o cliente busca
-2. Tips on the ideal property type for this profile  
+2. Dicas sobre o tipo de imóvel ideal para esse perfil  
 3. Perguntas relevantes para refinar a busca
 Seja objetivo e profissional. Máximo 4 linhas.`,
-      corretor: `You are a senior real estate consultant with 30 years of experience in the US market.
-Respond in English directly and practically, with real actionable tips for the agent.
+      corretor: `Você é um consultor sênior de imóveis com 30 anos de experiência no mercado brasileiro.
+Responda em português de forma direta e prática, com dicas reais e acionáveis para o corretor.
 Máximo 4 linhas. Sem enrolação.`
     };
     for (let tentativa = 0; tentativa < 3; tentativa++) {
@@ -1805,14 +1805,14 @@ Máximo 4 linhas. Sem enrolação.`
 
 
   // ============ DADOS DOS IMÓVEIS ============
-  const catalogoImoveis = [{'id': 1, 'tag': 'Featured', 'img': 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80', 'titulo': 'House with backyard, studio suite & outdoor grill', 'preco': '$420,000', 'tipo': 'à venda', 'bairro': 'Maple Grove, Austin TX', 'quartos': 3, 'banheiros': 2, 'vagas': 2, 'area': '180sq ft', 'descricao': 'Excelente casa com quintal amplo, edícula completa para hóspedes ou renda extra, churrasqueira coberta e área de lazer. Localizada em bairro tranquilo, próxima a escolas e comércio.', 'tour': 'https://kuula.co/share/collection/7Tl5W?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1'}, {'id': 2, 'tag': 'Apartamento', 'img': 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80', 'titulo': 'Renovated apartment, 2 bed, near subway', 'preco': '$ 2.400', 'tipo': '/mês', 'bairro': 'Midtown, New York NY', 'quartos': 2, 'banheiros': 1, 'vagas': 1, 'area': '68sq ft', 'descricao': 'Apartamento totalmente reformado, acabamento moderno, cozinha americana integrada. A 5 minutos a pé do metrô Liberdade, com acesso fácil a toda a cidade.', 'tour': 'https://kuula.co/share/collection/7TfF2?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1'}, {'id': 3, 'tag': 'New', 'img': 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80', 'titulo': 'Residencial Alto Paraíso — Lançamento 2025', 'preco': '$580,000', 'tipo': 'à venda', 'bairro': 'Beverly Hills, Los Angeles CA', 'quartos': 3, 'banheiros': 2, 'vagas': 2, 'area': '120sq ft', 'descricao': 'Lançamento exclusivo no Morumbi. Gated fechado com piscina, academia, salão de festas e segurança 24h. Entrega prevista para dezembro de 2025.', 'tour': 'https://kuula.co/share/collection/7TfFV?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1'}, {'id': 4, 'tag': 'Casa', 'img': 'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=800&q=80', 'titulo': 'Gated community home with gourmet area & pool', 'preco': '$890,000', 'tipo': 'à venda', 'bairro': 'Alphaville, Barueri', 'quartos': 4, 'banheiros': 3, 'vagas': 3, 'area': '280sq ft', 'descricao': 'Casa de alto padrão em condomínio fechado de Alphaville. Área gourmet completa, piscina privativa, jardim paisagístico e acabamento de luxo. Gated com segurança 24h.', 'tour': 'https://kuula.co/share/collection/7TG8p?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1'}, {'id': 5, 'tag': 'Novo', 'img': 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80', 'titulo': 'Flat alto padrão com varanda e vista livre', 'preco': '$ 3.200', 'tipo': '/mês', 'bairro': 'Buckhead, Atlanta GA', 'quartos': 1, 'banheiros': 1, 'vagas': 1, 'area': '52sq ft', 'descricao': 'Flat sofisticado nos Jardins, um dos bairros mais valorizados de SP. Balcony com vista livre, decoração contemporânea, serviços de hotel inclusos. Ideal para executivos.', 'tour': 'https://kuula.co/share/collection/7TG6B?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1'}, {'id': 6, 'tag': 'Terreno', 'img': 'https://images.unsplash.com/photo-1628745277894-3b0b67952002?w=800&q=80', 'titulo': 'Flat lot in gated community with 24h access', 'preco': '$ 145.000', 'tipo': 'à venda', 'bairro': 'Lake Highlands, Dallas TX', 'quartos': 0, 'banheiros': 0, 'vagas': 0, 'area': '360sq ft', 'descricao': 'Terreno plano e arborizado em condomínio fechado com segurança 24h. Documentação em dia, pronto para construir. Excelente oportunidade de investimento na Grande SP.', 'tour': 'https://kuula.co/share/collection/7TLlz?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1'}];
+  const catalogoImoveis = [{'id': 1, 'tag': 'Destaque', 'img': 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80', 'titulo': 'Casa com quintal, edícula e churrasqueira', 'preco': 'R$ 420.000', 'tipo': 'à venda', 'bairro': 'Jardim das Flores, São Paulo', 'quartos': 3, 'banheiros': 2, 'vagas': 2, 'area': '180m²', 'descricao': 'Excelente casa com quintal amplo, edícula completa para hóspedes ou renda extra, churrasqueira coberta e área de lazer. Localizada em bairro tranquilo, próxima a escolas e comércio.', 'tour': 'https://kuula.co/share/collection/7Tl5W?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1'}, {'id': 2, 'tag': 'Apartamento', 'img': 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80', 'titulo': 'Apartamento reformado, 2 quartos, próximo ao metrô', 'preco': 'R$ 2.400', 'tipo': '/mês', 'bairro': 'Liberdade, São Paulo', 'quartos': 2, 'banheiros': 1, 'vagas': 1, 'area': '68m²', 'descricao': 'Apartamento totalmente reformado, acabamento moderno, cozinha americana integrada. A 5 minutos a pé do metrô Liberdade, com acesso fácil a toda a cidade.', 'tour': 'https://kuula.co/share/collection/7TfF2?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1'}, {'id': 3, 'tag': 'Lançamento', 'img': 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80', 'titulo': 'Residencial Alto Paraíso — Lançamento 2025', 'preco': 'R$ 580.000', 'tipo': 'à venda', 'bairro': 'Morumbi, São Paulo', 'quartos': 3, 'banheiros': 2, 'vagas': 2, 'area': '120m²', 'descricao': 'Lançamento exclusivo no Morumbi. Condomínio fechado com piscina, academia, salão de festas e segurança 24h. Entrega prevista para dezembro de 2025.', 'tour': 'https://kuula.co/share/collection/7TfFV?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1'}, {'id': 4, 'tag': 'Casa', 'img': 'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=800&q=80', 'titulo': 'Casa em condomínio com área gourmet e piscina', 'preco': 'R$ 890.000', 'tipo': 'à venda', 'bairro': 'Alphaville, Barueri', 'quartos': 4, 'banheiros': 3, 'vagas': 3, 'area': '280m²', 'descricao': 'Casa de alto padrão em condomínio fechado de Alphaville. Área gourmet completa, piscina privativa, jardim paisagístico e acabamento de luxo. Condomínio com segurança 24h.', 'tour': 'https://kuula.co/share/collection/7TG8p?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1'}, {'id': 5, 'tag': 'Novo', 'img': 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80', 'titulo': 'Flat alto padrão com varanda e vista livre', 'preco': 'R$ 3.200', 'tipo': '/mês', 'bairro': 'Jardins, São Paulo', 'quartos': 1, 'banheiros': 1, 'vagas': 1, 'area': '52m²', 'descricao': 'Flat sofisticado nos Jardins, um dos bairros mais valorizados de SP. Varanda com vista livre, decoração contemporânea, serviços de hotel inclusos. Ideal para executivos.', 'tour': 'https://kuula.co/share/collection/7TG6B?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1'}, {'id': 6, 'tag': 'Terreno', 'img': 'https://images.unsplash.com/photo-1628745277894-3b0b67952002?w=800&q=80', 'titulo': 'Terreno plano em condomínio fechado com acesso 24h', 'preco': 'R$ 145.000', 'tipo': 'à venda', 'bairro': 'Cotia, São Paulo', 'quartos': 0, 'banheiros': 0, 'vagas': 0, 'area': '360m²', 'descricao': 'Terreno plano e arborizado em condomínio fechado com segurança 24h. Documentação em dia, pronto para construir. Excelente oportunidade de investimento na Grande SP.', 'tour': 'https://kuula.co/share/collection/7TLlz?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1'}];
 
   function abrirDetalhes(id) {
     const im = catalogoImoveis.find(i => i.id === id);
     if (!im) return;
     const featsHtml = [
-      im.quartos > 0 ? `<div style="text-align:center;background:var(--gray);border-radius:10px;padding:14px 20px"><div style="font-size:1.4rem">🛏</div><div style="font-weight:700;font-size:1.1rem;color:var(--navy)">${im.quartos}</div><div style="font-size:0.75rem;color:var(--gray-mid)">Bedrooms</div></div>` : '',
-      im.banheiros > 0 ? `<div style="text-align:center;background:var(--gray);border-radius:10px;padding:14px 20px"><div style="font-size:1.4rem">🚿</div><div style="font-weight:700;font-size:1.1rem;color:var(--navy)">${im.banheiros}</div><div style="font-size:0.75rem;color:var(--gray-mid)">Bathrooms</div></div>` : '',
+      im.quartos > 0 ? `<div style="text-align:center;background:var(--gray);border-radius:10px;padding:14px 20px"><div style="font-size:1.4rem">🛏</div><div style="font-weight:700;font-size:1.1rem;color:var(--navy)">${im.quartos}</div><div style="font-size:0.75rem;color:var(--gray-mid)">Quartos</div></div>` : '',
+      im.banheiros > 0 ? `<div style="text-align:center;background:var(--gray);border-radius:10px;padding:14px 20px"><div style="font-size:1.4rem">🚿</div><div style="font-weight:700;font-size:1.1rem;color:var(--navy)">${im.banheiros}</div><div style="font-size:0.75rem;color:var(--gray-mid)">Banheiros</div></div>` : '',
       im.vagas > 0 ? `<div style="text-align:center;background:var(--gray);border-radius:10px;padding:14px 20px"><div style="font-size:1.4rem">🚗</div><div style="font-weight:700;font-size:1.1rem;color:var(--navy)">${im.vagas}</div><div style="font-size:0.75rem;color:var(--gray-mid)">Vagas</div></div>` : '',
       `<div style="text-align:center;background:var(--gray);border-radius:10px;padding:14px 20px"><div style="font-size:1.4rem">📐</div><div style="font-weight:700;font-size:1.1rem;color:var(--navy)">${im.area}</div><div style="font-size:0.75rem;color:var(--gray-mid)">Área</div></div>`,
     ].filter(Boolean).join('');
@@ -1832,7 +1832,7 @@ Máximo 4 linhas. Sem enrolação.`
         <p style="font-size:0.9rem;color:var(--text-light);line-height:1.7;margin-bottom:24px">${im.descricao}</p>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <button onclick="abrirTour('${im.tour}')" style="flex:1;min-width:140px;background:var(--navy);color:white;border:none;padding:13px 20px;border-radius:10px;font-size:0.9rem;font-weight:600;cursor:pointer">🏠 Tour Virtual 360°</button>
-          <button onclick="fecharDetalhes();document.getElementById('chat-btn').click()" style="flex:1;min-width:140px;background:var(--gold);color:var(--navy);border:none;padding:13px 20px;border-radius:10px;font-size:0.9rem;font-weight:600;cursor:pointer">💬 Chat with Aria</button>
+          <button onclick="fecharDetalhes();document.getElementById('chat-btn').click()" style="flex:1;min-width:140px;background:var(--gold);color:var(--navy);border:none;padding:13px 20px;border-radius:10px;font-size:0.9rem;font-weight:600;cursor:pointer">💬 Falar com Sofia</button>
         </div>
       </div>`;
     modal.style.display = 'flex';
@@ -1879,10 +1879,10 @@ Máximo 4 linhas. Sem enrolação.`
     // Geocoding via Nominatim (gratuito)
     let lat = null, lng = null;
     try {
-      const endNeighborhood = bairro ? `${bairro}, ${cidade}, Brasil` : `${cidade}, Brasil`;
-      const addr = encodeURIComponent(endNeighborhood);
-      const geo = await fetch(`https://nominatim.openstreetmap.org/search?q=${addr}&format=json&limit=1&accept-language=en`, {
-        headers: { 'Accept': 'application/json', 'User-Agent': 'HomeAI/1.0' }
+      const endBairro = bairro ? `${bairro}, ${cidade}, Brasil` : `${cidade}, Brasil`;
+      const addr = encodeURIComponent(endBairro);
+      const geo = await fetch(`https://nominatim.openstreetmap.org/search?q=${addr}&format=json&limit=1&accept-language=pt-BR`, {
+        headers: { 'Accept': 'application/json', 'User-Agent': 'ImóvelAI/1.0' }
       });
       const geoData = await geo.json();
       console.log('Geocoding resultado:', geoData);
@@ -1891,7 +1891,7 @@ Máximo 4 linhas. Sem enrolação.`
         lng = parseFloat(geoData[0].lon);
         console.log('Coordenadas:', lat, lng);
       } else {
-        console.log('Geocoding sem resultado para:', endNeighborhood);
+        console.log('Geocoding sem resultado para:', endBairro);
       }
     } catch(e) { console.log('Geocoding falhou:', e); }
 
@@ -1935,7 +1935,7 @@ Máximo 4 linhas. Sem enrolação.`
           <div><h2>Proprietários</h2><p>Pessoas que querem anunciar imóveis</p></div>
           <div style="display:flex;gap:8px;flex-wrap:wrap">
             <select id="filtro-tipo-neg" onchange="filtrarProprietarios()" style="padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:0.85rem">
-              <option value="">All</option>
+              <option value="">Todos</option>
               <option value="Venda">🏠 Venda</option>
               <option value="Aluguel">🔑 Aluguel</option>
             </select>
@@ -1982,7 +1982,7 @@ Máximo 4 linhas. Sem enrolação.`
       const corStatus = p.status === 'Novo' ? '#1e7e34' : p.status === 'Contatado' ? '#b7800a' : '#1a56db';
       const bgStatus  = p.status === 'Novo' ? '#e6f4ea' : p.status === 'Contatado' ? '#fef7e0' : '#e8f0fe';
       const iconeNeg  = p.tipo_negocio === 'Venda' ? '🏠' : '🔑';
-      const waMsg     = encodeURIComponent(`Hello ${p.nome}! I'm an agent at HomeAI. I saw you're interested in ${p.tipo_negocio.toLowerCase()} your property in ${p.cidade}. Can I help you?`);
+      const waMsg     = encodeURIComponent(`Olá ${p.nome}! Sou corretor da ImóvelAI. Vi que você tem interesse em ${p.tipo_negocio.toLowerCase()} seu imóvel em ${p.cidade}. Posso te ajudar?`);
       return `
         <div style="background:white;border-radius:14px;padding:18px;box-shadow:0 2px 12px rgba(27,58,92,0.08);border:1px solid rgba(27,58,92,0.06)">
           <!-- TOPO: avatar + info + status -->
@@ -1990,7 +1990,7 @@ Máximo 4 linhas. Sem enrolação.`
             <div style="width:46px;height:46px;background:var(--navy);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.2rem;flex-shrink:0">${p.nome[0].toUpperCase()}</div>
             <div style="flex:1;min-width:0">
               <div style="font-weight:700;color:var(--navy);font-size:0.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${p.nome}</div>
-              <div style="font-size:0.78rem;color:var(--gray-mid);margin-top:2px">${new Date(p.created_at).toLocaleDateString('en-US')} às ${new Date(p.created_at).toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'})}</div>
+              <div style="font-size:0.78rem;color:var(--gray-mid);margin-top:2px">${new Date(p.created_at).toLocaleDateString('pt-BR')} às ${new Date(p.created_at).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}</div>
             </div>
             <span style="background:${bgStatus};color:${corStatus};padding:4px 10px;border-radius:20px;font-size:0.72rem;font-weight:700;flex-shrink:0">${p.status}</span>
           </div>
@@ -2000,7 +2000,7 @@ Máximo 4 linhas. Sem enrolação.`
             <span style="background:#eef2ff;color:#3730a3;padding:4px 10px;border-radius:20px;font-size:0.78rem;font-weight:600">${iconeNeg} ${p.tipo_negocio}</span>
             <span style="background:var(--gray);color:var(--text-light);padding:4px 10px;border-radius:20px;font-size:0.78rem">🏗️ ${p.tipo_imovel}</span>
             <span style="background:var(--gray);color:var(--text-light);padding:4px 10px;border-radius:20px;font-size:0.78rem">📍 ${p.bairro ? p.bairro+', ' : ''}${p.cidade}</span>
-            ${p.valor_pretendido ? `<span style="background:#fef7e0;color:#7a5c00;padding:4px 10px;border-radius:20px;font-size:0.78rem;font-weight:600">💰 $ ${p.valor_pretendido}</span>` : ''}
+            ${p.valor_pretendido ? `<span style="background:#fef7e0;color:#7a5c00;padding:4px 10px;border-radius:20px;font-size:0.78rem;font-weight:600">💰 R$ ${p.valor_pretendido}</span>` : ''}
           </div>
 
           ${p.observacoes ? `<div style="background:var(--gray);border-radius:8px;padding:10px 12px;font-size:0.82rem;color:var(--text-light);margin-bottom:12px;font-style:italic">"${p.observacoes}"</div>` : ''}
@@ -2066,7 +2066,7 @@ Máximo 4 linhas. Sem enrolação.`
             <div style="font-weight:700;color:#1B3A5C;margin-bottom:4px">${p.nome}</div>
             <div style="font-size:0.82rem;color:#666">${p.tipo_negocio} • ${p.tipo_imovel}</div>
             <div style="font-size:0.82rem;color:#666">${p.bairro ? p.bairro+', ' : ''}${p.cidade}</div>
-            ${p.valor_pretendido ? `<div style="font-weight:700;color:#C9A84C;margin-top:4px">$ ${p.valor_pretendido}</div>` : ''}
+            ${p.valor_pretendido ? `<div style="font-weight:700;color:#C9A84C;margin-top:4px">R$ ${p.valor_pretendido}</div>` : ''}
             <a href="https://wa.me/55${p.telefone.replace(/\D/g,'')}" target="_blank"
               style="display:block;margin-top:8px;background:#25d366;color:white;padding:6px 10px;border-radius:6px;text-align:center;text-decoration:none;font-size:0.8rem;font-weight:700">
               📱 WhatsApp
@@ -2406,7 +2406,7 @@ Máximo 4 linhas. Sem enrolação.`
   </style>
 
 <!-- BOTÃO PAINEL -->
-<button id="btn-painel" onclick="abrirPainel()">⚡ Agent Dashboard</button>
+<button id="btn-painel" onclick="abrirPainel()">⚡ Painel do Corretor</button>
 
 <!-- TOUR VIRTUAL MODAL -->
 <div id="tour-overlay" style="display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;flex-direction:column">
@@ -2414,7 +2414,7 @@ Máximo 4 linhas. Sem enrolação.`
     <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.2)">
       <div>
         <div style="font-family:Playfair Display,serif;color:#C9A84C;font-size:1.1rem;font-weight:700">🏠 Tour Virtual 360°</div>
-        <div style="color:rgba(255,255,255,0.5);font-size:0.75rem;margin-top:2px">Explore the property as if you were there</div>
+        <div style="color:rgba(255,255,255,0.5);font-size:0.75rem;margin-top:2px">Navegue pelo imóvel como se estivesse lá</div>
       </div>
       <button onclick="fecharTour()" style="background:rgba(255,255,255,0.1);border:none;color:white;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1rem">✕</button>
     </div>
@@ -2432,13 +2432,13 @@ Máximo 4 linhas. Sem enrolação.`
 <div id="login-overlay" style="display:none;position:fixed;inset:0;z-index:400;background:rgba(10,20,36,0.7);backdrop-filter:blur(8px);align-items:center;justify-content:center;">
   <div style="background:white;border-radius:20px;padding:40px;width:90%;max-width:400px;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,0.3)">
     <div style="font-size:2.5rem;margin-bottom:8px">&#127968;</div>
-    <h2 style="font-family:Playfair Display,serif;color:var(--navy);font-size:1.5rem;margin-bottom:6px">Agent Dashboard</h2>
-    <p style="color:var(--gray-mid);font-size:0.875rem;margin-bottom:28px">Exclusive access for authorized agents</p>
+    <h2 style="font-family:Playfair Display,serif;color:var(--navy);font-size:1.5rem;margin-bottom:6px">Painel do Corretor</h2>
+    <p style="color:var(--gray-mid);font-size:0.875rem;margin-bottom:28px">Acesso exclusivo para corretores autorizados</p>
     <button onclick="loginGoogle()" style="width:100%;display:flex;align-items:center;justify-content:center;gap:12px;background:white;border:1.5px solid #e0e0e0;border-radius:10px;padding:14px 20px;font-size:0.9rem;font-weight:600;color:#333;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.08)">
       <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-      Sign in with Google
+      Entrar com Google
     </button>
-    <p style="margin-top:20px;font-size:0.75rem;color:var(--gray-mid)">Authorized agents only</p>
+    <p style="margin-top:20px;font-size:0.75rem;color:var(--gray-mid)">Apenas corretores autorizados</p>
     <button onclick="document.getElementById('login-overlay').style.display='none'" style="margin-top:12px;background:none;border:none;color:var(--gray-mid);font-size:0.8rem;cursor:pointer">Cancelar</button>
   </div>
 </div>
@@ -2451,8 +2451,8 @@ Máximo 4 linhas. Sem enrolação.`
     <div class="painel-sidebar">
       <div class="painel-brand" style="display:flex;align-items:center;justify-content:space-between">
         <div>
-          <h3>HomeAI</h3>
-          <p>Agent Dashboard</p>
+          <h3>ImóvelAI</h3>
+          <p>Painel do Corretor</p>
         </div>
         <button onclick="fecharPainel()" title="Fechar painel" style="background:rgba(255,255,255,0.1);border:none;color:white;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">✕</button>
       </div>
@@ -2485,7 +2485,7 @@ Máximo 4 linhas. Sem enrolação.`
       </div>
       <div class="painel-sidebar-footer">
         <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);margin-bottom:8px;padding:0 4px" id="user-email-display"></div>
-        <button class="painel-close-btn" onclick="fecharPainel()" style="margin-bottom:6px">🏠 Back to site</button>
+        <button class="painel-close-btn" onclick="fecharPainel()" style="margin-bottom:6px">🏠 Voltar ao site</button>
         <button class="painel-close-btn" onclick="logout()" style="background:rgba(201,168,76,0.15);color:var(--gold)">↩ Sair</button>
       </div>
     </div>
@@ -2531,16 +2531,16 @@ Máximo 4 linhas. Sem enrolação.`
         <div>
           <label style="font-size:0.78rem;font-weight:600;color:var(--text-light);display:block;margin-bottom:4px">Tipo de negócio</label>
           <select id="an-tipo-neg" style="width:100%;padding:10px 12px;border:1.5px solid #e0e0e0;border-radius:8px;font-size:0.9rem;outline:none">
-            <option>Sale</option>
-            <option>Rent</option>
+            <option>Venda</option>
+            <option>Aluguel</option>
           </select>
         </div>
         <div>
-          <label style="font-size:0.78rem;font-weight:600;color:var(--text-light);display:block;margin-bottom:4px">Property type</label>
+          <label style="font-size:0.78rem;font-weight:600;color:var(--text-light);display:block;margin-bottom:4px">Tipo do imóvel</label>
           <select id="an-tipo-imovel" style="width:100%;padding:10px 12px;border:1.5px solid #e0e0e0;border-radius:8px;font-size:0.9rem;outline:none">
-            <option>House</option>
-            <option>Apartment</option>
-            <option>Land</option>
+            <option>Casa</option>
+            <option>Apartamento</option>
+            <option>Terreno</option>
             <option>Comercial</option>
             <option>Chácara</option>
             <option>Outro</option>
@@ -2553,7 +2553,7 @@ Máximo 4 linhas. Sem enrolação.`
           <input id="an-cidade" type="text" placeholder="São Paulo" style="width:100%;padding:10px 12px;border:1.5px solid #e0e0e0;border-radius:8px;font-size:0.9rem;outline:none">
         </div>
         <div>
-          <label style="font-size:0.78rem;font-weight:600;color:var(--text-light);display:block;margin-bottom:4px">Neighborhood</label>
+          <label style="font-size:0.78rem;font-weight:600;color:var(--text-light);display:block;margin-bottom:4px">Bairro</label>
           <input id="an-bairro" type="text" placeholder="Morumbi" style="width:100%;padding:10px 12px;border:1.5px solid #e0e0e0;border-radius:8px;font-size:0.9rem;outline:none">
         </div>
       </div>
@@ -2563,7 +2563,7 @@ Máximo 4 linhas. Sem enrolação.`
       </div>
       <div>
         <label style="font-size:0.78rem;font-weight:600;color:var(--text-light);display:block;margin-bottom:4px">Observações (opcional)</label>
-        <textarea id="an-obs" placeholder="Ex: Casa com 3 beds, quintal, próxima à escola..." rows="3" style="width:100%;padding:10px 12px;border:1.5px solid #e0e0e0;border-radius:8px;font-size:0.9rem;outline:none;resize:none;font-family:inherit"></textarea>
+        <textarea id="an-obs" placeholder="Ex: Casa com 3 quartos, quintal, próxima à escola..." rows="3" style="width:100%;padding:10px 12px;border:1.5px solid #e0e0e0;border-radius:8px;font-size:0.9rem;outline:none;resize:none;font-family:inherit"></textarea>
       </div>
       <button id="btn-enviar-anuncio" onclick="enviarAnuncio()" style="background:var(--navy);color:white;border:none;padding:14px;border-radius:10px;font-size:0.95rem;font-weight:700;cursor:pointer;width:100%">📤 Enviar cadastro</button>
       <p style="text-align:center;font-size:0.75rem;color:var(--gray-mid)">Seus dados são protegidos e nunca compartilhados com terceiros.</p>
