@@ -299,12 +299,72 @@
   @keyframes spin { to { transform: rotate(360deg); } }
 
   @media (max-width: 768px) {
-    nav { padding: 0 20px; }
+    /* NAV */
+    nav { padding: 0 16px; height: 56px; }
     .nav-links { display: none; }
-    section { padding: 60px 20px; }
-    .stats { gap: 28px; }
-    #chat-window { width: calc(100vw - 40px); right: 20px; }
-    .imoveis-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .logo-text { font-size: 1.1rem; }
+    .painel-float-btn { top: 60px; right: 12px; font-size: 0.75rem; padding: 8px 12px; }
+
+    /* HERO */
+    .hero { padding: 80px 16px 40px; min-height: auto; }
+    .hero h1 { font-size: 2rem; line-height: 1.2; }
+    .hero p { font-size: 0.9rem; }
+    .search-box { flex-direction: column; gap: 8px; padding: 12px; border-radius: 14px; }
+    .search-box input { font-size: 0.85rem; width: 100%; }
+    .search-btn { width: 100%; padding: 12px; justify-content: center; border-radius: 10px; }
+    .search-examples { gap: 8px; }
+    .search-example { font-size: 0.78rem; padding: 6px 12px; }
+    .stats { gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 24px; }
+    .stat-num { font-size: 1.6rem; }
+
+    /* SEÇÕES */
+    section { padding: 40px 16px; }
+    .section-title { font-size: 1.5rem; }
+    .imoveis-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .filtros { flex-wrap: wrap; gap: 6px; }
+    .filtro-btn { font-size: 0.78rem; padding: 6px 12px; }
+
+    /* CARDS */
+    .imoveis-grid { grid-template-columns: 1fr; gap: 16px; }
+    .card-imovel { border-radius: 12px; }
+    .card-img { height: 200px; }
+    .card-price { font-size: 1.2rem; }
+    .card-features { flex-wrap: wrap; gap: 8px; }
+
+    /* COMO FUNCIONA */
+    .como-funciona-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* CHAT */
+    #chat-toggle { width: 48px; height: 48px; font-size: 1.1rem; bottom: 16px; right: 16px; }
+    #chat-window { width: calc(100vw - 24px); right: 12px; bottom: 72px; max-height: 65vh; border-radius: 16px; }
+    #chat-header { padding: 12px 16px; }
+    #chat-messages { padding: 12px; }
+    #chat-input-area { padding: 10px 12px; gap: 8px; }
+    #chat-input { font-size: 0.85rem; }
+
+    /* MODAIS */
+    #login-overlay > div { padding: 28px 20px; margin: 16px; width: calc(100% - 32px); }
+    #tour-overlay > div { width: calc(100% - 16px); border-radius: 12px; }
+
+    /* PAINEL */
+    #painel-overlay { flex-direction: column; }
+    .painel-sidebar { width: 100%; min-height: auto; flex-direction: row; flex-wrap: wrap; padding: 12px; gap: 6px; }
+    .painel-sidebar-menu { flex-direction: row; flex-wrap: wrap; gap: 4px; }
+    .painel-menu-item { padding: 8px 10px; font-size: 0.75rem; border-radius: 8px; }
+    .painel-menu-item .menu-icon { display: none; }
+    .painel-content { padding: 16px; }
+    .painel-sidebar-header { display: none; }
+    .painel-sidebar-footer { display: none; }
+    .dashboard-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .dashboard-card { padding: 16px; }
+    .dashboard-card h3 { font-size: 1.4rem; }
+    .leads-table { font-size: 0.78rem; }
+    .leads-table th, .leads-table td { padding: 8px 6px; }
+  }
+
+  @media (max-width: 400px) {
+    .hero h1 { font-size: 1.7rem; }
+    .dashboard-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
